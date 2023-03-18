@@ -11,19 +11,34 @@ import { FormButton } from "./toLoginElements";
 
 //import { Text } from "./LoginElements";
 import Footer from "../Footer";
-const PatLogin = () => {
+const PatLogin = (state) => {
+  const patientLogin = async(event)=>{
+    //event.preventDefault();
+    const { contract } = state;
+    const name = document.querySelector("#name").value;
+    const password = document.querySelector("#password").value;
+
+    console.log(name, password);
+
+    /*const transaction = await contract.patientLogin(name, password);
+    await transaction.wait();
+    console.log("Transaction is done.");*/
+
+  }
+
+
   return (
     <>
       <Container>
         <FormWrap>
           <Icon to="/">MRS</Icon>
           <FormContent>
-            <Form action="/PatDashboard">
+            <Form onSubmit={patientLogin} action="/PatDashboard">
               <FormH1>Login as Patient</FormH1>
-              <FormLabel htmlFor="for">UserID</FormLabel>
-              <FormInput type={String} required />
+              <FormLabel htmlFor="for">Name</FormLabel>
+              <FormInput id="name" type={String} required />
               <FormLabel htmlFor="to">Password</FormLabel>
-              <FormInput type="password" required />
+              <FormInput id="password" type="password" required />
               <FormButton type="submit" to="/PatDashboard">
                 Register
               </FormButton>

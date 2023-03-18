@@ -73,7 +73,7 @@ function App() {
   const [account, setAccount] = useState("None");
   useEffect(() => {
     const connectWallet = async () => {
-      const contractAddress = "0x44F6981293FB89088c8be5E087a3eC8d4c0DFaf6";
+      const contractAddress = "0x2FA85D733469601D105bce66521026f894a21a28";
       const contractABI = ContractAbi;
       try {
         const { ethereum } = window;
@@ -117,14 +117,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/signup" element={<SigninPage stare={state} />}  />
+        <Route path="/signup" element={<SigninPage state={state} />}  />
         <Route path="/signupDoc" element={<SignupdocPage />} />
         <Route path="/signupPharma" element={<SignupPharmapage />} />
         <Route path="/SignupLab" element={<SignupLabpage />} />
         <Route path="/SignupIn" element={<SignupInpage />} />
         <Route path="/SignupRes" element={<SignupRespage />} />
 
-        <Route path="/PatEntry" element={<PatPage />} />
+        <Route path="/PatEntry" element={<PatPage state={state} />} />
         <Route path="/DocEntry" element={<DocPage />} />
         <Route path="/PharmaEntry" element={<PharmaPage />} />
         <Route path="/LabEntry" element={<LabPage />} />

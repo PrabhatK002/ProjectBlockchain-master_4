@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { Container } from "./LoginElements";
 import { FormWrap } from "./LoginElements";
 import { Icon } from "./LoginElements";
@@ -8,6 +9,7 @@ import { FormH1 } from "./LoginElements";
 import { FormLabel } from "./LoginElements";
 import { FormInput } from "./LoginElements";
 import { FormButton } from "./LoginElements";
+import { FormError } from "./LoginElements";
 
 import { Text } from "./LoginElements";
 import Footer from "../Footer";
@@ -17,8 +19,11 @@ import { Web3Provider } from "@ethersproject/providers";
 
 const LoginForm = ({ state }) => {
 
-  const patientRegister = async()=>{
-    //event.preventDefault();
+  const [error, setError] = useState("");
+  const [showError, setShowError] = useState(false);
+
+  const patientRegister = async(event)=>{
+    event.preventDefault();
     const { contract } = state;
     const name = document.querySelector("#name").value;
     const phone = document.querySelector("#phone").value;
@@ -28,29 +33,52 @@ const LoginForm = ({ state }) => {
 
     console.log(name, phone, gender, dob);
 
-    const transaction = await contract.addPatient(name, phone, gender, dob, password);
-    await transaction.wait();
-    console.log("Transaction is done.");
-
+    try {
+      const transaction = await contract.addPatient(name, phone, gender, dob, password);
+      await transaction.wait();
+      console.log("Transaction is done.");
+      document.getElementById("register-form").reset();
+      setError("");
+      setShowError(false);
+      window.location.href = "/PatEntry";
+    } catch (error) {
+      setError("Already registered as patient.");
+      setShowError(true);
+    }
   }
+
+  const handleOkClick = () => {
+    setShowError(false);
+    document.getElementById("register-form").reset();
+    setError("");
+  };
+
   return (
     <>
       <Container>
         <FormWrap>
           <Icon to="/">MRS</Icon>
           <FormContent>
-            <Form onSubmit={patientRegister} action="/PatEntry">
+            <Form id="register-form" onSubmit={patientRegister} action="/PatEntry">
               <FormH1>Sign Up to register as new patient</FormH1>
-              <FormLabel  htmlFor="for">Name</FormLabel>
+              <FormLabel htmlFor="for">Name</FormLabel>
               <FormInput id="name" type={String} required />
-              <FormLabel  htmlFor="for">Phone no:</FormLabel>
+              <FormLabel htmlFor="for">Phone no:</FormLabel>
               <FormInput id="phone" type={String} required />
-              <FormLabel  htmlFor="for">gender</FormLabel>
+              <FormLabel htmlFor="for">gender</FormLabel>
               <FormInput id="gender" type={String} required />
-              <FormLabel  htmlFor="for">DOB</FormLabel>
+              <FormLabel htmlFor="for">DOB</FormLabel>
               <FormInput id="dob" type={String} required />
-              <FormLabel  htmlFor="to">Password</FormLabel>
+              <FormLabel htmlFor="to">Password</FormLabel>
               <FormInput id="password" type="password" required />
+              {showError && (
+                <FormError style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                  <span>{error}</span>
+                  <FormButton style={{height:'25px', width:'30px',  display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'   }} type="button" onClick={handleOkClick}>
+                    OK
+                  </FormButton>
+                </FormError>
+              )}
               <FormButton type="submit" to="/PatEntry">
                 Register
               </FormButton>
