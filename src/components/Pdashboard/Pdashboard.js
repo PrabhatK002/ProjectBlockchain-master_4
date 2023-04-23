@@ -8,10 +8,17 @@ import Psidebar from './Psidebar';
 
 
 
-const Navbar = ({toggle}) => {
+const Navbar = ({toggle, state}) => {
 
   const toggleHome = () => {
      scroll.scrollToTop()
+  }
+
+  const patientLogout = async(event)=>{
+    event.preventDefault();
+    const { contract } = state;
+    const transaction = await contract.logOut();
+
   }
 
   return (
@@ -22,7 +29,7 @@ const Navbar = ({toggle}) => {
               MRS
             </NavLogo>  
             <NavBtn>
-                <NavBtnLink to="/">Log out</NavBtnLink>
+                <NavBtnLink to="/" onClick={patientLogout}>Log out</NavBtnLink>
             </NavBtn>            
         </NavbarContainer>
       </Nav> 

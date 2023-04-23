@@ -24,7 +24,7 @@ const PatLogin = (state) => {
   const [showError, setShowError] = useState(false);
 
   const patientLogin = async(event)=>{
-    //event.preventDefault();
+    event.preventDefault();
     const { contract } = state;
     const name = document.querySelector("#name").value;
     const password = document.querySelector("#password").value;

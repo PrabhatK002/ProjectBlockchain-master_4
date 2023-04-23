@@ -35,6 +35,7 @@ import LabPage from "./pages/LabEntry";
 import PharmaPage from "./pages/PharmaEntry";
 import InPage from "./pages/InEntry";
 import ResPage from "./pages/ResEntry";
+import PatientLogout from "./pages/PatLogout";
 
 import InDashboardpage from "./pages/InDashboard";
 import ResDashboardpage from "./pages/ResDashboard";
@@ -161,6 +162,9 @@ function App() {
         <Route path="/LabUploadrec" element={<LabUploadpage />} />
         <Route path="/InUploadrec" element={<InUploadpage />} />
         <Route path="/ResUploadrec" element={<ResUploadpage />} />
+
+
+        <Route path="/PatLogout" element={<PatientLogout state={state} />} />
 
         <Route path="/logout" element={<Home />} />
       </Routes>
