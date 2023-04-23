@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import LoginForm from '../components/LoginForm/Login';
 //import SignIn from '../components/Signin/index.js'
 
-const SigninPage = (state) => {
+const SignupPage = (state) => {
 
   return (
     <>
@@ -13,4 +13,4 @@ const SigninPage = (state) => {
   );
 };
 
-export default SigninPage;
+export default SignupPage;

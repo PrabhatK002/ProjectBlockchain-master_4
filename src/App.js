@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Sidebar from './components/Sidebar';
 import { Routes } from "react-router-dom";
 import Home from "./pages";
-import SigninPage from "./pages/signin";
+import SignupPage from "./pages/signup";
 import DocDashboard from "./pages/DocDashboard";
 import PatDashboard from "./pages/PatDashboard";
 import SignupdocPage from "./pages/signupDoc";
@@ -117,7 +117,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/signup" element={<SigninPage state={state} />}  />
+        <Route path="/signup" element={<SignupPage state={state} />}  />
         <Route path="/signupDoc" element={<SignupdocPage />} />
         <Route path="/signupPharma" element={<SignupPharmapage />} />
         <Route path="/SignupLab" element={<SignupLabpage />} />
