@@ -13,7 +13,7 @@ import SignupdocPage from "./pages/signupDoc";
 import Docdetail from "./pages/Docdetail";
 import Patdetail from "./pages/Patdetail";
 import Docaccess from "./pages/Docaccess";
-import Grantrevoke from "./pages/Grantrevoke";
+import Grant from "./pages/Grant";
 import Revoke from "./pages/Revoke";
 import DocUpload from "./pages/DocUpload";
 //import PatUpload from "./pages/PatUpload";
@@ -153,7 +153,7 @@ function App() {
         <Route path="/InaccessRec" element={<InAccess />} />
         <Route path="/ResaccessRec" element={<ResAccess />} />
 
-        <Route path="/graRev" element={<Grantrevoke />} />
+        <Route path="/Grant" element={<Grant state={state} />} />
         <Route path="/Rev" element={<Revoke />} />
 
         <Route path="/Uploadrec" element={<DocUpload />} />

@@ -5,7 +5,7 @@ import LoginForm from "../components/LoginForm/Login";
 import Ddashboard from "../components/Ddashboard/Ddashboard";
 import Pdashboard from "../components/Pdashboard/Pdashboard";
 import Pdetail from "../components/Pdashboard/Pdetail";
-import Pgrantrev from "../components/Pdashboard/Pgrantrev";
+import Pgrant from "../components/Pdashboard/Pgrant";
 import Prevoke from "../components/Pdashboard/Prevoke";
 
 const Revoke = () => {
