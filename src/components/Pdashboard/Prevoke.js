@@ -11,33 +11,73 @@ import { FormLabel } from "./PdashboardElements";
 import { FormInput } from "./PdashboardElements";
 import { FormButton } from "./PdashboardElements";
 import Footer from "../Footer";
-const Prevoke = () => {
-  const [name, setName] = useState("");
-  const [name1, setName1] = useState("");
+const Prevoke = (state) => {
+  const [error, setError] = useState("");
+  const [showError, setShowError] = useState(false);
+  const [accessRevoked, setAccessRevoked] = useState(false);
 
-  const handleSubmit = (event) => {
+
+
+  const revokeAccess = async(event)=>{
     event.preventDefault();
-    //alert(`The address you provided access to is: ${name}`);
-    alert(`The address you revoked access is: ${name1}`);
-  };
+    const { contract } = state;
+    const address = document.querySelector("#address").value;
+
+    console.log(address);
+
+
+    try {
+      const transaction = await contract.revokeAccess(address);
+      await transaction.wait();
+      console.log("Transaction is done.");
+      document.getElementById("revoke-form").reset();
+      setError("");
+      setShowError(false);
+      setAccessRevoked(true); // set accessRevoked to true
+      //window.location.href = "/PatEntry";
+    } catch (error) {
+      setError("Already unauthorised or an error occured.");
+      setShowError(true);
+    }
+  }
+      
+      const handleOkClick = () => {
+        setShowError(false);
+        document.getElementById("revoke-form").reset();
+        setError("");
+      };
   return (
     <>
       <Container>
         <FormWrap>
           <FormContent>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={revokeAccess} id="revoke-form" >
               <FormH1>Revoke Access</FormH1>
               {/* <FormLabel htmlFor='to'>Address to provide access: </FormLabel>
                     <FormInput type={ String } value={name} onChange={(e)=>setName(e.target.value)} /> */}
               <FormLabel htmlFor="from">Address to revoke access: </FormLabel>
-              <FormInput
-                type={String}
-                value={name1}
-                onChange={(e) => setName1(e.target.value)}
-              />
+              <FormInput id="address" type={String} required/>
+
+              {showError && (
+                <FormError style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                  <span>{error}</span>
+                  <FormButton style={{height:'25px', width:'30px',  display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'   }} type="button" onClick={handleOkClick}>
+                    OK
+                  </FormButton>
+                </FormError>
+              )}
+
+              {accessRevoked && (
+                <FormSuccess style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                  <span>Access Revoked!</span>
+                  <FormButton style={{height:'25px', width:'30px',  display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'   }} type="button" onClick={() => setAccessRevoked(false)}>
+                    OK
+                  </FormButton>
+                </FormSuccess>
+              )}
+              {/* <FormLabel htmlFor='from'>Address to revoke access: </FormLabel>
+                    <FormInput type={ String } value={name1} onChange={(e)=>setName1(e.target.value)} /> */}
               <FormButton type="submit">submit</FormButton>
-              {/* <Text>Forgot Password</Text>
-                      <Text>Sign Up</Text> */}
             </Form>
           </FormContent>
         </FormWrap>

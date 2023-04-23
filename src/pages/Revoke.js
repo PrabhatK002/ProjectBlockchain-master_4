@@ -8,11 +8,11 @@ import Pdetail from "../components/Pdashboard/Pdetail";
 import Pgrant from "../components/Pdashboard/Pgrant";
 import Prevoke from "../components/Pdashboard/Prevoke";
 
-const Revoke = () => {
+const Revoke = (state) => {
   return (
     <>
       <Pdashboard />
-      <Prevoke />
+      <Prevoke state={state}/>
     </>
   );
 };

@@ -29,7 +29,7 @@ const Pgrant = (state) => {
       const transaction = await contract.grantAccess(address);
       await transaction.wait();
       console.log("Transaction is done.");
-      document.getElementById("login-form").reset();
+      document.getElementById("grant-form").reset();
       setError("");
       setShowError(false);
       setAccessGranted(true); // set accessGranted to true

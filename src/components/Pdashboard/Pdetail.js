@@ -13,7 +13,7 @@ import { Text } from './PdashboardElements';
 import styled from 'styled-components';
 //import { OuterBox } from './PdashboardElements';
 
-const Pdetail = () => {
+const Pdetail = (state) => {
   return (
     <>
       <Container>

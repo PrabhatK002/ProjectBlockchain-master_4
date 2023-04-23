@@ -6,11 +6,11 @@ import Ddashboard from '../components/Ddashboard/Ddashboard';
 import Pdashboard from '../components/Pdashboard/Pdashboard';
 import Pdetail from "../components/Pdashboard/Pdetail";
 
-const PatDashboard = () => {
+const PatDashboard = (state) => {
   return (
     <>
       <Pdashboard/>   
-      <Pdetail/> 
+      <Pdetail state={state}/> 
     </>
   );
 };

@@ -140,7 +140,7 @@ function App() {
         <Route path="/ResDashboard" element={<ResDashboardpage />} />
 
         <Route path="/Docdetail" element={<Docdetail />} />
-        <Route path="/Patdetail" element={<Patdetail />} />
+        <Route path="/Patdetail" element={<Patdetail state={state} />} />
         <Route path="/Pharmadetail" element={<Phardetail />} />
         <Route path="/Labdetail" element={<Labdetail />} />
         <Route path="/Indetail" element={<Indetail />} />
@@ -154,7 +154,7 @@ function App() {
         <Route path="/ResaccessRec" element={<ResAccess />} />
 
         <Route path="/Grant" element={<Grant state={state} />} />
-        <Route path="/Rev" element={<Revoke />} />
+        <Route path="/Revoke" element={<Revoke state={state} />} />
 
         <Route path="/Uploadrec" element={<DocUpload />} />
         {/* <Route path="/UploadPrec" element={<PatUpload />} /> */}
