@@ -6,46 +6,60 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Sidebar from './components/Sidebar';
 import { Routes } from "react-router-dom";
 import Home from "./pages";
+
 import SignupPage from "./pages/signup";
-import DocDashboard from "./pages/DocDashboard";
-import PatDashboard from "./pages/PatDashboard";
 import SignupdocPage from "./pages/signupDoc";
-import Docdetail from "./pages/Docdetail";
-import Patdetail from "./pages/Patdetail";
-import Docaccess from "./pages/Docaccess";
-import Grant from "./pages/Grant";
-import Revoke from "./pages/Revoke";
-import DocUpload from "./pages/DocUpload";
-//import PatUpload from "./pages/PatUpload";
-import Pataccess from "./pages/Pataccess";
 import SignupPharmapage from "./pages/signupPharma";
-import PharDashboardpage from "./pages/PharDashboard";
-import Phardetail from "./pages/Phardetail";
-import PharAccess from "./pages/PharAccess";
-import PharUpload from "./pages/PharUpload";
 import SignupLabpage from "./pages/SignupLab";
-import LabDashboardpage from "./pages/LabDashboard";
-import Labdetail from "./pages/Labdetail";
-import LabAccess from "./pages/LabAccess";
-import LabUploadpage from "./pages/LabUpload";
 import SignupInpage from "./pages/signupIn";
+import SignupRespage from "./pages/signupRes";
+
 import PatPage from "./pages/PatEntry";
 import DocPage from "./pages/DocEntry";
 import LabPage from "./pages/LabEntry";
 import PharmaPage from "./pages/PharmaEntry";
 import InPage from "./pages/InEntry";
 import ResPage from "./pages/ResEntry";
-import PatientLogout from "./pages/PatLogout";
 
+
+import PatDashboard from "./pages/PatDashboard";
+import DocDashboard from "./pages/DocDashboard";
+import PharDashboardpage from "./pages/PharDashboard";
+import LabDashboardpage from "./pages/LabDashboard";
 import InDashboardpage from "./pages/InDashboard";
 import ResDashboardpage from "./pages/ResDashboard";
+
+import Patdetail from "./pages/Patdetail";
+import Docdetail from "./pages/Docdetail";
+import Phardetail from "./pages/Phardetail";
+import Labdetail from "./pages/Labdetail";
 import Indetail from "./pages/Indetail";
 import Resdetail from "./pages/Resdetail";
+
+
+import RecordsForPatPage from "./pages/RecordsForPat";
+//import Pataccess from "./pages/Pataccess";
+import Docaccess from "./pages/Docaccess";
+import PharAccess from "./pages/PharAccess";
+import LabAccess from "./pages/LabAccess";
 import InAccess from "./pages/InAccess";
 import ResAccess from "./pages/ResAccess";
+
+import DocUpload from "./pages/DocUpload";
+import PharUpload from "./pages/PharUpload";
+import LabUploadpage from "./pages/LabUpload";
+
 import InUploadpage from "./pages/InUpload";
 import ResUploadpage from "./pages/ResUpload";
-import SignupRespage from "./pages/signupRes";
+
+import Grant from "./pages/Grant";
+import Revoke from "./pages/Revoke";
+
+//import PatUpload from "./pages/PatUpload";
+
+//import PatientLogout from "./pages/PatLogout";
+
+//import Navbar from './components/Pdashboard/Pdashboard.js';
 
 import {ContractAbi }from "./contract.js";
 import { useState, useEffect } from "react";
@@ -131,23 +145,23 @@ function App() {
         <Route path="/LabEntry" element={<LabPage />} />
         <Route path="/InEntry" element={<InPage />} />
         <Route path="/ResEntry" element={<ResPage />} />
-
+     
+        <Route path="/PatDashboard" element={<PatDashboard state={state}/>} />
         <Route path="/DocDashboard" element={<DocDashboard />} />
-        <Route path="/PatDashboard" element={<PatDashboard />} />
         <Route path="/PharmaDashboard" element={<PharDashboardpage />} />
         <Route path="/LabDashboard" element={<LabDashboardpage />} />
         <Route path="/InDashboard" element={<InDashboardpage />} />
         <Route path="/ResDashboard" element={<ResDashboardpage />} />
 
-        <Route path="/Docdetail" element={<Docdetail />} />
         <Route path="/Patdetail" element={<Patdetail state={state} />} />
+        <Route path="/Docdetail" element={<Docdetail />} />
         <Route path="/Pharmadetail" element={<Phardetail />} />
         <Route path="/Labdetail" element={<Labdetail />} />
         <Route path="/Indetail" element={<Indetail />} />
         <Route path="/Resdetail" element={<Resdetail />} />
 
-        <Route path="/accessRec" element={<Docaccess />} />
-        <Route path="/accessPrec" element={<Pataccess />} />
+        <Route path="/RecordsForPat" element={<RecordsForPatPage state={state}/>} />
+        <Route path="/DocAccess" element={<Docaccess />} />
         <Route path="/PharmaAccess" element={<PharAccess />} />
         <Route path="/LabaccessRec" element={<LabAccess />} />
         <Route path="/InaccessRec" element={<InAccess />} />
@@ -164,7 +178,9 @@ function App() {
         <Route path="/ResUploadrec" element={<ResUploadpage />} />
 
 
-        <Route path="/PatLogout" element={<PatientLogout state={state} />} />
+        {/*<Route path="/PatLogout" element={<PatLogout state={state} />} />*/}
+
+      
 
         <Route path="/logout" element={<Home />} />
       </Routes>

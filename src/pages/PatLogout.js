@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import Navbar from "../components/Pdashboard/Pdashboard";
 
 const PatientLogout = (state) => {
@@ -9,4 +9,4 @@ const PatientLogout = (state) => {
   );
 };
 
-export default PatientLogout;
+export default PatientLogout;*/

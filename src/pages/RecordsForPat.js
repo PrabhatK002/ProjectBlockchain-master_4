@@ -4,15 +4,15 @@ import LoginForm from '../components/LoginForm/Login';
 //import SignIn from '../components/Signin/index.js'
 import Ddashboard from '../components/Ddashboard/Ddashboard';
 import Pdashboard from '../components/Pdashboard/Pdashboard';
-import Pdetail from "../components/Pdashboard/Pdetail";
+import RecordsByPat from "../components/Pdashboard/RecordsByPat";
 
-const PatDetail = (state) => {
+const RecordsForPatPage = (state) => {
   return (
     <>
       <Pdashboard/>   
-      <Pdetail state={state}/> 
+      <RecordsByPat state={state}/> 
     </>
   );
 };
 
-export default PatDetail;
+export default RecordsForPatPage;

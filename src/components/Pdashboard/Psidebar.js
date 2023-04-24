@@ -15,11 +15,11 @@ const Psidebar = () => {
         <SidebarMenu>
           <SidebarLink to="/Patdetail">Patient's Details</SidebarLink>
           <br></br>
-          <SidebarLink to="/accessPrec">Access Record</SidebarLink>
+          <SidebarLink to="/RecordsForPat">Access Record</SidebarLink>
           <br></br>
-          <SidebarLink to="/graRev">Grant access</SidebarLink>
+          <SidebarLink to="/Grant">Grant access</SidebarLink>
           <br></br>
-          <SidebarLink to="/Rev">Revoke Access</SidebarLink>
+          <SidebarLink to="/Revoke">Revoke Access</SidebarLink>
         </SidebarMenu>
       </SidebarWrapper>
     </>

@@ -8,7 +8,7 @@ import Psidebar from './Psidebar';
 
 
 
-const Navbar = ({toggle, state}) => {
+const Pdashboard = ({toggle, state}) => {
 
   const toggleHome = () => {
      scroll.scrollToTop()
@@ -42,5 +42,5 @@ const Navbar = ({toggle, state}) => {
   );
 };
 
-export default Navbar;
+export default Pdashboard;
 
