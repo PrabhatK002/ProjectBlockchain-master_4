@@ -242,6 +242,40 @@ export const Text = styled.span`
   font-size: 14px;
 `;
 
+
+export const FormError = styled.div`
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #dc3545;
+  border-radius: 4px;
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const FormSuccess = styled.div`
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #dc3545;
+  border-radius: 4px;
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+
+
+
 export const CardContainer = styled.div`
   background-color: #ffffff;
   border: 1px solid #f0f0f0;

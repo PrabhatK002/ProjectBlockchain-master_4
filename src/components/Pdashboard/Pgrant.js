@@ -10,7 +10,11 @@ import { FormH1 } from "./PdashboardElements";
 import { FormLabel } from "./PdashboardElements";
 import { FormInput } from "./PdashboardElements";
 import { FormButton } from "./PdashboardElements";
+import { FormError } from "./PdashboardElements";
+import { FormSuccess } from "./PdashboardElements";
 import Footer from "../Footer";
+
+
 const Pgrant = (state) => {
 
   const [error, setError] = useState("");
