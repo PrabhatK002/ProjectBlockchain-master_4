@@ -140,21 +140,21 @@ function App() {
         <Route path="/SignupRes" element={<SignupRespage />} />
 
         <Route path="/PatEntry" element={<PatPage state={state} />} />
-        <Route path="/DocEntry" element={<DocPage />} />
+        <Route path="/DocEntry" element={<DocPage  state={state} />} />
         <Route path="/PharmaEntry" element={<PharmaPage />} />
         <Route path="/LabEntry" element={<LabPage />} />
         <Route path="/InEntry" element={<InPage />} />
         <Route path="/ResEntry" element={<ResPage />} />
      
         <Route path="/PatDashboard" element={<PatDashboard state={state}/>} />
-        <Route path="/DocDashboard" element={<DocDashboard />} />
+        <Route path="/DocDashboard" element={<DocDashboard state={state}/>} />
         <Route path="/PharmaDashboard" element={<PharDashboardpage />} />
         <Route path="/LabDashboard" element={<LabDashboardpage />} />
         <Route path="/InDashboard" element={<InDashboardpage />} />
         <Route path="/ResDashboard" element={<ResDashboardpage />} />
 
         <Route path="/Patdetail" element={<Patdetail state={state} />} />
-        <Route path="/Docdetail" element={<Docdetail />} />
+        <Route path="/Docdetail" element={<Docdetail state={state} />} />
         <Route path="/Pharmadetail" element={<Phardetail />} />
         <Route path="/Labdetail" element={<Labdetail />} />
         <Route path="/Indetail" element={<Indetail />} />
@@ -170,7 +170,7 @@ function App() {
         <Route path="/Grant" element={<Grant state={state} />} />
         <Route path="/Revoke" element={<Revoke state={state} />} />
 
-        <Route path="/Uploadrec" element={<DocUpload />} />
+        <Route path="/Uploadrec" element={<DocUpload state={state}/>} />
         {/* <Route path="/UploadPrec" element={<PatUpload />} /> */}
         <Route path="/PharmaUpload" element={<PharUpload />} />
         <Route path="/LabUploadrec" element={<LabUploadpage />} />

@@ -30,7 +30,7 @@ const Pdetail = ({ state }) => {
   const loadPatientData = async () => {
     try {
       setLoading(true);
-      const contract = { state };
+      const { contract } = state;
       const result = await contract.methods.getPatientDetails().call();
       setPatientData({
         name: result[0],

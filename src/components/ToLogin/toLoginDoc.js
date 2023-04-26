@@ -8,21 +8,66 @@ import { FormH1 } from "./toLoginElements";
 import { FormLabel } from "./toLoginElements";
 import { FormInput } from "./toLoginElements";
 import { FormButton } from "./toLoginElements";
+import { FormError } from "./toLoginElements";
 //import { Text } from "./toLoginElements";
 import Footer from "../Footer";
-const DocLogin = () => {
+
+
+const DocLogin = (state) => {
+
+  const [error, setError] = useState("");
+  const [showError, setShowError] = useState(false);
+  
+
+  const doctorLogin = async(event)=>{
+    event.preventDefault();
+    const { contract } = state;
+    const name = document.querySelector("#name").value;
+    const password = document.querySelector("#license").value;
+
+    console.log(name);
+
+
+    try {
+      const transaction = await contract.doctorLogin(name, password);
+      await transaction.wait();
+      console.log("Transaction is done.");
+      document.getElementById("login-form").reset();
+      setError("");
+      setShowError(false);
+      window.location.href = "/Ddashboard";
+    } catch (error) {
+      setError("Name, Password and Address don't match.");
+      setShowError(true);
+    }
+  }
+      
+      const handleOkClick = () => {
+        setShowError(false);
+        document.getElementById("login-form").reset();
+        setError("");
+      };
+
   return (
     <>
       <Container>
         <FormWrap>
           <Icon to="/">MRS</Icon>
           <FormContent>
-            <Form action="/DocDashboard">
+            <Form onSubmit={doctorLogin} id="login-form" action="/DocDashboard">
               <FormH1>Sign Up to register as new Doctor</FormH1>
               <FormLabel htmlFor="for">Name</FormLabel>
-              <FormInput type={String} required />
+              <FormInput id="name" type={String} required />
               <FormLabel htmlFor="to">Liscence no:</FormLabel>
-              <FormInput type={String} required />
+              <FormInput id="license" type={String} required />
+              {showError && (
+                <FormError style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                  <span>{error}</span>
+                  <FormButton style={{height:'25px', width:'30px',  display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'   }} type="button" onClick={handleOkClick}>
+                    OK
+                  </FormButton>
+                </FormError>
+              )}
 
               <FormButton type="submit" to="/DocDashboard">
                 Register

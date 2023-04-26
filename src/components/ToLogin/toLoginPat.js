@@ -41,7 +41,7 @@ const PatLogin = (state) => {
       document.getElementById("login-form").reset();
       setError("");
       setShowError(false);
-      window.location.href = "/PatEntry";
+      window.location.href = "/Pdashboard";
     } catch (error) {
       setError("Name, Password and Address don't match.");
       setShowError(true);

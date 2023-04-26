@@ -14,11 +14,19 @@ import Dsidebar from '../Ddashboard/Dsidebar'
 
 
 
-const Navbar = ({toggle}) => {
+const Ddashboard = ({state, toggle}) => {
 
   const toggleHome = () => {
      scroll.scrollToTop()
   }
+
+
+ const doctorLogout = async(event)=>{
+   event.preventDefault();
+   const { contract } = state;
+   const transaction = await contract.logOut();
+
+ }
 
   return (
     <>
@@ -28,7 +36,7 @@ const Navbar = ({toggle}) => {
               MRS
             </NavLogo> 
             <NavBtn>
-                <NavBtnLink to="/">Log out</NavBtnLink>
+                <NavBtnLink to="/" onClick={doctorLogout} >Log out</NavBtnLink>
             </NavBtn>         
         </NavbarContainer>
       </Nav> 
@@ -41,5 +49,5 @@ const Navbar = ({toggle}) => {
   );
 };
 
-export default Navbar;
+export default Ddashboard;
 
