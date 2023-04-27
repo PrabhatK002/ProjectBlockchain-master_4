@@ -12,6 +12,8 @@ import { FormError } from "./toLoginElements";
 //import { Text } from "./toLoginElements";
 import Footer from "../Footer";
 
+import { useState, useEffect } from 'react';
+
 
 const DocLogin = (state) => {
 

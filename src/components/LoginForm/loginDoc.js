@@ -17,6 +17,8 @@ import Footer from "../Footer";
 import { ethers } from "ethers";
 import { Web3Provider } from "@ethersproject/providers";
 
+import { useState, useEffect } from 'react';
+
 const DocForm = (state) => {
 
   const [error, setError] = useState("");

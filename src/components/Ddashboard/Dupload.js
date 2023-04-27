@@ -12,7 +12,7 @@ import { FormInput } from "./DdashboardElements";
 import { FormButton } from "./DdashboardElements";
 import { Text } from "./DdashboardElements";
 import Footer from "../Footer";
-import { FormError } from "./toLoginElements";
+import { FormError } from "./DdashboardElements";
 
 const Dupload = (state) => {
   const [error, setError] = useState("");

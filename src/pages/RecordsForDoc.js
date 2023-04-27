@@ -4,14 +4,16 @@ import LoginForm from '../components/LoginForm/Login';
 //import SignIn from '../components/Signin/index.js'
 import Ddashboard from '../components/Ddashboard/Ddashboard';
 import Ddetail from "../components/Ddashboard/Ddetail";
-import Daccess from "../components/Ddashboard/Daccess";
-const Docaccess = (state) => {
+import RecordsByDoc from "../components/Ddashboard/RecordsByDoc";
+
+
+const RecordsForDocPage = (state) => {
   return (
     <>
       <Ddashboard/>  
-      <Daccess state={state} />
+      <RecordsByDoc state={state} />
     </>
   );
 };
 
-export default Docaccess;
+export default RecordsByDoc;

@@ -37,13 +37,16 @@ import Indetail from "./pages/Indetail";
 import Resdetail from "./pages/Resdetail";
 
 
-import RecordsForPatPage from "./pages/RecordsForPat";
+
 //import Pataccess from "./pages/Pataccess";
 import Docaccess from "./pages/Docaccess";
 import PharAccess from "./pages/PharAccess";
 import LabAccess from "./pages/LabAccess";
 import InAccess from "./pages/InAccess";
 import ResAccess from "./pages/ResAccess";
+
+import RecordsForPatPage from "./pages/RecordsForPat";
+import RecordsForDocPage from "./pages/RecordsForDoc";
 
 import DocUpload from "./pages/DocUpload";
 import PharUpload from "./pages/PharUpload";
@@ -160,12 +163,15 @@ function App() {
         <Route path="/Indetail" element={<Indetail />} />
         <Route path="/Resdetail" element={<Resdetail />} />
 
-        <Route path="/RecordsForPat" element={<RecordsForPatPage state={state}/>} />
-        <Route path="/DocAccess" element={<Docaccess />} />
+        
+        <Route path="/DocAccess" element={<Docaccess state={state}/>} />
         <Route path="/PharmaAccess" element={<PharAccess />} />
         <Route path="/LabaccessRec" element={<LabAccess />} />
         <Route path="/InaccessRec" element={<InAccess />} />
         <Route path="/ResaccessRec" element={<ResAccess />} />
+
+        <Route path="/RecordsForPat" element={<RecordsForPatPage state={state}/>} />
+        <Route path="/RecordsForDoc" element={<RecordsForDocPage state={state}/>} />
 
         <Route path="/Grant" element={<Grant state={state} />} />
         <Route path="/Revoke" element={<Revoke state={state} />} />
