@@ -25,13 +25,13 @@ const DocLogin = (state) => {
     event.preventDefault();
     const { contract } = state;
     const name = document.querySelector("#name").value;
-    const password = document.querySelector("#license").value;
+    const license = document.querySelector("#license").value;
 
     console.log(name);
 
 
     try {
-      const transaction = await contract.doctorLogin(name, password);
+      const transaction = await contract.doctorLogin(name, license);
       await transaction.wait();
       console.log("Transaction is done.");
       document.getElementById("login-form").reset();

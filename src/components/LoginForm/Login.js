@@ -22,19 +22,21 @@ const LoginForm = ({ state }) => {
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
 
+
   const patientRegister = async(event)=>{
     event.preventDefault();
     const { contract } = state;
-    const name = document.querySelector("#name").value;
-    const phone = document.querySelector("#phone").value;
-    const gender = document.querySelector("#gender").value;
-    const dob = document.querySelector("#dob").value;
-    const password = document.querySelector("#password").value;
+    console.log(contract);
+    const _name = document.querySelector("#name").value;
+    const _phone = document.querySelector("#phone").value;
+    const _gender = document.querySelector("#gender").value;
+    const _dob = document.querySelector("#dob").value;
+    const _password = document.querySelector("#password").value;
 
-    console.log(name, phone, gender, dob);
+    console.log(_name, _phone, _gender, _dob);
 
     try {
-      const transaction = await contract.addPatient(name, phone, gender, dob, password);
+      const transaction = await contract.addPatient(_name, _phone, _gender, _dob, _password);
       await transaction.wait();
       console.log("Transaction is done.");
       document.getElementById("register-form").reset();
@@ -42,8 +44,9 @@ const LoginForm = ({ state }) => {
       setShowError(false);
       window.location.href = "/PatEntry";
     } catch (error) {
-      setError("Already registered as patient.");
+      setError("Already registered as patient or an error occurred.");
       setShowError(true);
+      console.log(error);
     }
   }
 

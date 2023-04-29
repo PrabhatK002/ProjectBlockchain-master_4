@@ -1,4 +1,4 @@
-export const ContractAddress = "0x2FA85D733469601D105bce66521026f894a21a28";
+export const ContractAddress = "0xC240a2BEF01B1F7Db5f487730384A0552F9562DF";
 export const ContractAbi = [
   {
     "inputs": [],
@@ -501,6 +501,19 @@ export const ContractAbi = [
   },
   {
     "inputs": [],
+    "name": "getOwner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "getPatientDetails",
     "outputs": [
       {
@@ -927,4 +940,4 @@ export const ContractAbi = [
     "stateMutability": "view",
     "type": "function"
   }
-];
+]

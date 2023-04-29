@@ -64,7 +64,7 @@ import Revoke from "./pages/Revoke";
 
 //import Navbar from './components/Pdashboard/Pdashboard.js';
 
-import {ContractAbi }from "./contract.js";
+import { ContractAbi } from "./contract.js";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { Web3Provider } from "@ethersproject/providers"
@@ -91,7 +91,7 @@ function App() {
   const [account, setAccount] = useState("None");
   useEffect(() => {
     const connectWallet = async () => {
-      const contractAddress = "0x2FA85D733469601D105bce66521026f894a21a28";
+      const contractAddress = "0xC240a2BEF01B1F7Db5f487730384A0552F9562DF";
       const contractABI = ContractAbi;
       try {
         const { ethereum } = window;

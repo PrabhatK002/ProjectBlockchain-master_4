@@ -27,16 +27,16 @@ const DocForm = (state) => {
   const doctorRegister = async(event)=>{
     event.preventDefault();
     const { contract } = state;
-    const name = document.querySelector("#name").value;
+    const _name = document.querySelector("#name").value;
     const license = document.querySelector("#license").value;
     const _hname = document.querySelector("#hospital").value;
-    const faculty = document.querySelector("#faculty").value;
-    const contact = document.querySelector("#contact").value;
+    const _faculty = document.querySelector("#faculty").value;
+    const _contact = document.querySelector("#contact").value;
 
-    console.log(name, license, _hname, faculty, contact);
+    console.log(_name, license, _hname, _faculty, _contact);
 
     try {
-      const transaction = await contract.addDoctor(name, license, _hname, faculty, contact);
+      const transaction = await contract.addDoctor(_name, license, _hname, _faculty, _contact);
       await transaction.wait();
       console.log("Transaction is done.");
       document.getElementById("register-form").reset();
