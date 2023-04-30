@@ -12,6 +12,9 @@ import { FormInput } from "./IndashboardElement";
 import { FormButton } from "./IndashboardElement";
 //import { Text } from './IndashboardElement';
 import Footer from "../Footer";
+
+import { useHistory, useNavigate } from 'react-router-dom';
+
 const Inaccess = () => {
   const [name, setName] = useState("");
 

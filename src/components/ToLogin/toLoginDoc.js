@@ -38,7 +38,7 @@ const DocLogin = ({state}) => {
       document.getElementById("login-form").reset();
       setError("");
       setShowError(false);
-      window.location.href = "/Ddashboard";
+      window.location.href = "/DocDashboard";
     } catch (error) {
       setError("Name, Password and Address don't match.");
       setShowError(true);
@@ -58,7 +58,7 @@ const DocLogin = ({state}) => {
           <Icon to="/">MRS</Icon>
           <FormContent>
             <Form onSubmit={doctorLogin} id="login-form" action="/DocDashboard">
-              <FormH1>Sign Up to register as new Doctor</FormH1>
+              <FormH1>Log in as new Doctor</FormH1>
               <FormLabel htmlFor="for">Name</FormLabel>
               <FormInput id="name" type={String} required />
               <FormLabel htmlFor="to">Liscence no:</FormLabel>
@@ -73,7 +73,7 @@ const DocLogin = ({state}) => {
               )}
 
               <FormButton type="submit" to="/DocDashboard">
-                Register
+                Log In
               </FormButton>
               {/* <Text>Forgot Password</Text>
                       <Text>Sign Up</Text> */}

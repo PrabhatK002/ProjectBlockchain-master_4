@@ -11,7 +11,7 @@ const Dsidebar = () => {
               Doctor's Details
             </SidebarLink>
             <br></br>
-            <SidebarLink to="/accessRec" >
+            <SidebarLink to="/DocAccess" >
               Access Record
             </SidebarLink>
             <br></br>

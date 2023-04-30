@@ -12,6 +12,7 @@ import { FormInput } from "./IndashboardElement";
 import { FormButton } from "./IndashboardElement";
 import { Text } from "./IndashboardElement";
 import Footer from "../Footer";
+import { FormError } from "./IndashboardElement";
 
 const Inupload = () => {
   const [name, setName] = useState("");

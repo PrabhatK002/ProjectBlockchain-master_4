@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import LabDashboard from "../components/LabDashboard/LabDashboard";
 import Labaccess from "../components/LabDashboard/Labaccess";
 
-const LabAccess = () => {
+const LabAccess = ({state}) => {
   return (
     <>
       <LabDashboard />  
-      <Labaccess />
+      <Labaccess state={state}/>
     </>
   );
 };

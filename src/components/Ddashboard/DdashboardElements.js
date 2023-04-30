@@ -168,7 +168,7 @@ export const Icon = styled(Link)`
 `;
 
 export const FormContent = styled.div`
-  height: 100%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -186,7 +186,7 @@ export const Form = styled.form`
   z-index: 1;
   display: grid;
   margin: 250px auto 250px auto;
-  padding: 80px 32px;
+  padding: 60px 32px;
   border-radius: 4px;
   box-shadow: #7EC8E3;
 
@@ -207,13 +207,13 @@ text-align: center;
 
 export const FormLabel = styled.label`
   margin-bottom: 8px;
-  font-size: 14px;
+  font-size: 12px;
   color: #fff;
 `;
 
 export const FormInput = styled.input`
-  padding: 16px 16px;
-  margin-bottom: 32px;
+  padding: 10px 16px;
+  margin-bottom: 20px;
   border: none;
   border-radius: 4px;
 `;

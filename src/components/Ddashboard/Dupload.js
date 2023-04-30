@@ -48,7 +48,7 @@ const Dupload = ({state}) => {
       
       const handleOkClick = () => {
         setShowError(false);
-        document.getElementById("login-form").reset();
+        document.getElementById("upload-form").reset();
         setError("");
       };
 

@@ -15,7 +15,7 @@ import Dsidebar from '../Ddashboard/Dsidebar'
 
 
 const Ddashboard = ({state, toggle}) => {
-
+  console.log(state);
   const toggleHome = () => {
      scroll.scrollToTop()
   }
@@ -25,6 +25,7 @@ const Ddashboard = ({state, toggle}) => {
    event.preventDefault();
    const { provider, signer, contract } = state;
    console.log(contract);
+   console.log(provider);
    const transaction = await contract.logOut();
 
  }

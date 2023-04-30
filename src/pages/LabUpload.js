@@ -3,11 +3,11 @@ import PharmaDashboard from "../components/PharmaDashboard/PharmaDashboard";
 import PharmaUpload from "../components/PharmaDashboard/PharmaUpload";
 import LabDashboard from "../components/LabDashboard/LabDashboard";
 import Labupload from "../components/LabDashboard/Labupload"
-const LabUploadpage = () => {
+const LabUploadpage = ({state}) => {
   return (
     <>
       <LabDashboard/>  
-      <Labupload />
+      <Labupload state={state}/>
     </>
   );
 };

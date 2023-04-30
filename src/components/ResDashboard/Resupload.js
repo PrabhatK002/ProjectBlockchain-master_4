@@ -12,6 +12,7 @@ import { FormInput } from "./ResdashboardElement";
 import { FormButton } from "./ResdashboardElement";
 //import { Text } from './ResdashboardElement ';
 //import Footer from '../Footer';
+import { FormError } from "./ResdashboardElement";
 
 const Resupload = () => {
   const [name, setName] = useState("");

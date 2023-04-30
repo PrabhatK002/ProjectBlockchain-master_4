@@ -15,11 +15,21 @@ import Pharmasidebar from './Pharmasidebar';
 
 
 
-const Navbar = ({toggle}) => {
-
+const Pharmadashboard = ({state, toggle}) => {
+  console.log(state);
   const toggleHome = () => {
      scroll.scrollToTop()
   }
+
+
+ const pharmacyLogout = async(event)=>{
+   event.preventDefault();
+   const { provider, signer, contract } = state;
+   console.log(contract);
+   console.log(provider);
+   const transaction = await contract.logOut();
+
+ }
 
   return (
     <>
@@ -29,12 +39,12 @@ const Navbar = ({toggle}) => {
               MRS
             </NavLogo> 
             <NavBtn>
-                <NavBtnLink to="/">Log out</NavBtnLink>
+                <NavBtnLink to="/" onClick={pharmacyLogout} >Log out</NavBtnLink>
             </NavBtn>         
         </NavbarContainer>
       </Nav> 
       <SidebarContainer>
-        <Pharmasidebar />
+        <Dsidebar />
       </SidebarContainer>
                
     
@@ -42,5 +52,5 @@ const Navbar = ({toggle}) => {
   );
 };
 
-export default Navbar;
+export default Pharmadashboard;
 

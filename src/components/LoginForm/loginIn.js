@@ -10,6 +10,9 @@ import { FormInput } from "./LoginElements";
 import { FormButton } from "./LoginElements";
 import { Text } from "./LoginElements";
 import Footer from "../Footer";
+import { FormError } from "./LoginElements";
+
+import { useState, useEffect } from 'react';
 
 const InForm = () => {
   return (

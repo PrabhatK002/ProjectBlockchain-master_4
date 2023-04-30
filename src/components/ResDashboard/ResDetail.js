@@ -19,6 +19,9 @@ import {
 // import { Text } from './DdashboardElements';
 // import styled from 'styled-components';
 //import { OuterBox } from './DdashboardElements';
+import { FormInput } from './ResdashboardElement';
+
+import { useState, useEffect } from 'react';
 
 const ResDetail = () => {
   return (

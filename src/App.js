@@ -47,6 +47,10 @@ import ResAccess from "./pages/ResAccess";
 
 import RecordsForPatPage from "./pages/RecordsForPat";
 import RecordsForDocPage from "./pages/RecordsForDoc";
+import RecordsForPharmaPage from "./pages/RecordsForPharma";
+import RecordsForLabPage from "./pages/RecordsForLab";
+import RecordsForInPage from "./pages/RecordsForIn";
+import RecordsForResPage from "./pages/RecordsForRes";
 
 import DocUpload from "./pages/DocUpload";
 import PharUpload from "./pages/PharUpload";
@@ -128,51 +132,55 @@ function App() {
 
         <Route path="/signup" element={<SignupPage state={state} />}  />
         <Route path="/signupDoc" element={<SignupdocPage state={state} />} />
-        <Route path="/signupPharma" element={<SignupPharmapage />} />
-        <Route path="/SignupLab" element={<SignupLabpage />} />
-        <Route path="/SignupIn" element={<SignupInpage />} />
-        <Route path="/SignupRes" element={<SignupRespage />} />
+        <Route path="/signupPharma" element={<SignupPharmapage state={state}/>} />
+        <Route path="/SignupLab" element={<SignupLabpage state={state}/>} />
+        <Route path="/SignupIn" element={<SignupInpage state={state}/>} />
+        <Route path="/SignupRes" element={<SignupRespage state={state}/>} />
 
         <Route path="/PatEntry" element={<PatPage state={state} />} />
         <Route path="/DocEntry" element={<DocPage  state={state} />} />
-        <Route path="/PharmaEntry" element={<PharmaPage />} />
-        <Route path="/LabEntry" element={<LabPage />} />
-        <Route path="/InEntry" element={<InPage />} />
-        <Route path="/ResEntry" element={<ResPage />} />
+        <Route path="/PharmaEntry" element={<PharmaPage state={state}/>} />
+        <Route path="/LabEntry" element={<LabPage state={state}/>} />
+        <Route path="/InEntry" element={<InPage state={state}/>} />
+        <Route path="/ResEntry" element={<ResPage state={state}/>} />
      
         <Route path="/PatDashboard" element={<PatDashboard state={state}/>} />
         <Route path="/DocDashboard" element={<DocDashboard state={state}/>} />
-        <Route path="/PharmaDashboard" element={<PharDashboardpage />} />
-        <Route path="/LabDashboard" element={<LabDashboardpage />} />
-        <Route path="/InDashboard" element={<InDashboardpage />} />
-        <Route path="/ResDashboard" element={<ResDashboardpage />} />
+        <Route path="/PharmaDashboard" element={<PharDashboardpage state={state}/>} />
+        <Route path="/LabDashboard" element={<LabDashboardpage state={state}/>} />
+        <Route path="/InDashboard" element={<InDashboardpage state={state}/>} />
+        <Route path="/ResDashboard" element={<ResDashboardpage state={state}/>} />
 
         <Route path="/Patdetail" element={<Patdetail state={state} />} />
         <Route path="/Docdetail" element={<Docdetail state={state} />} />
-        <Route path="/Pharmadetail" element={<Phardetail />} />
-        <Route path="/Labdetail" element={<Labdetail />} />
-        <Route path="/Indetail" element={<Indetail />} />
-        <Route path="/Resdetail" element={<Resdetail />} />
+        <Route path="/Pharmadetail" element={<Phardetail state={state}/>} />
+        <Route path="/Labdetail" element={<Labdetail state={state}/>} />
+        <Route path="/Indetail" element={<Indetail state={state}/>} />
+        <Route path="/Resdetail" element={<Resdetail state={state}/>} />
 
         
         <Route path="/DocAccess" element={<Docaccess state={state}/>} />
-        <Route path="/PharmaAccess" element={<PharAccess />} />
-        <Route path="/LabaccessRec" element={<LabAccess />} />
-        <Route path="/InaccessRec" element={<InAccess />} />
+        <Route path="/PharmaAccess" element={<PharAccess state={state}/>} />
+        <Route path="/LabaccessRec" element={<LabAccess state={state}/>} />
+        <Route path="/InaccessRec" element={<InAccess state={state}/>} />
         <Route path="/ResaccessRec" element={<ResAccess />} />
 
         <Route path="/RecordsForPat" element={<RecordsForPatPage state={state}/>} />
         <Route path="/RecordsForDoc" element={<RecordsForDocPage state={state}/>} />
+        <Route path="/RecordsForPharma" element={<RecordsForPharmaPage state={state}/>} />
+        <Route path="/RecordsForLab" element={<RecordsForLabPage state={state}/>} />
+        <Route path="/RecordsForIn" element={<RecordsForInPage state={state}/>} />
+        <Route path="/RecordsForRes" element={<RecordsForResPage state={state}/>} />
 
         <Route path="/Grant" element={<Grant state={state} />} />
         <Route path="/Revoke" element={<Revoke state={state} />} />
 
         <Route path="/Uploadrec" element={<DocUpload state={state}/>} />
         {/* <Route path="/UploadPrec" element={<PatUpload />} /> */}
-        <Route path="/PharmaUpload" element={<PharUpload />} />
-        <Route path="/LabUploadrec" element={<LabUploadpage />} />
-        <Route path="/InUploadrec" element={<InUploadpage />} />
-        <Route path="/ResUploadrec" element={<ResUploadpage />} />
+        <Route path="/PharmaUpload" element={<PharUpload state={state}/>} />
+        <Route path="/LabUploadrec" element={<LabUploadpage state={state}/>} />
+        <Route path="/InUploadrec" element={<InUploadpage state={state}/>} />
+        <Route path="/ResUploadrec" element={<ResUploadpage state={state}/>} />
 
 
         {/*<Route path="/PatLogout" element={<PatLogout state={state} />} />*/}

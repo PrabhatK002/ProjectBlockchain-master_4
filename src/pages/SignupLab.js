@@ -1,10 +1,10 @@
 import React from 'react';
 import LabForm from '../components/LoginForm/loginLab';
-const SignupLabpage = () => {
+const SignupLabpage = ({state}) => {
   return (
     <>
     <h1>cdcfs</h1>
-    <LabForm/>
+    <LabForm state={state}/>
   </>
   );
 };

@@ -3,11 +3,11 @@ import React from "react";
 //import LoginForm from '../components/LoginForm/Login';
 //import SignIn from '../components/Signin/index.js'
 import PharmaLogin from "../components/ToLogin/toLoginPharma";
-const PharmaPage = () => {
+const PharmaPage = ({state}) => {
   return (
     <>
       <h1>cdcfs</h1>
-      <PharmaLogin />
+      <PharmaLogin state={state}/>
     </>
   );
 };

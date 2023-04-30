@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import PharmaDashboard from "../components/PharmaDashboard/PharmaDashboard";
 import PharmaDetail from "../components/PharmaDashboard/PharmaDetail";
-const Phardetail = () => {
+const Phardetail = ({state}) => {
   return (
     <>
       <PharmaDashboard/>  
-      <PharmaDetail />
+      <PharmaDetail state={state}/>
     </>
   );
 };

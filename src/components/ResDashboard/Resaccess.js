@@ -12,6 +12,8 @@ import { FormInput } from "./ResdashboardElement";
 import { FormButton } from "./ResdashboardElement";
 //import { Text } from './IndashboardElement';
 import Footer from "../Footer";
+import { useHistory, useNavigate } from 'react-router-dom';
+
 const Resaccess = () => {
   const [name, setName] = useState("");
 
