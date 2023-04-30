@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import ResDashboard from "../components/ResDashboard/ResDashboard";
 import Resaccess from "../components/ResDashboard/Resaccess";
 
-const ResAccess = () => {
+const ResAccess = ({state}) => {
   return (
     <>
       <ResDashboard />
-      <Resaccess />
+      <Resaccess state={state}/>
     </>
   );
 };

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import InDashboard from "./InDashboard";
 import InDetail from "../components/InDashboard/InDetail";
-const Indetail = () => {
+
+const Indetail = ({state}) => {
   return (
     <>
       <InDashboard />
-      <InDetail />
+      <InDetail state={state}/>
     </>
   );
 };

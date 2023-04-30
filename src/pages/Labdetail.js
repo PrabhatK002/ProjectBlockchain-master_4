@@ -6,11 +6,12 @@ import Ddashboard from '../components/Ddashboard/Ddashboard';
 import Ddetail from "../components/Ddashboard/Ddetail";
 import LabDashboard from "./LabDashboard";
 import LabDetail from "../components/LabDashboard/LabDetail";
-const Labdetail = () => {
+
+const Labdetail = ({state}) => {
   return (
     <>
       <LabDashboard/>  
-      <LabDetail />
+      <LabDetail state={state}/>
     </>
   );
 };

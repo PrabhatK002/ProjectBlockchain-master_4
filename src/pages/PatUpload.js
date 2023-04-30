@@ -6,11 +6,11 @@ import Pdashboard from '../components/Pdashboard/Pdashboard';
 import Ddetail from "../components/Ddashboard/Ddetail";
 import Daccess from "../components/Ddashboard/Daccess";
 import Pupload from "../components/Pdashboard/Pupload";
-const PatUpload = () => {
+const PatUpload = ({state}) => {
   return (
     <>
       <Pdashboard/>  
-      <Pupload />
+      <Pupload state={state}/>
     </>
   );
 };

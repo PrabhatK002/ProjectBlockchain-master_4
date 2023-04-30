@@ -3,11 +3,12 @@ import React, { useState } from "react";
 // import PharmaUpload from "../components/PharmaDashboard/PharmaUpload";
 import InDashboard from "../components/InDashboard/InDashboard";
 import Inupload from "../components/InDashboard/Inupload";
-const InUploadpage = () => {
+
+const InUploadpage = ({state}) => {
   return (
     <>
       <InDashboard />
-      <Inupload />
+      <Inupload state={state}/>
     </>
   );
 };

@@ -17,7 +17,7 @@ const Insidebar = () => {
           <br></br>
           <SidebarLink to="/InaccessRec">Access Record</SidebarLink>
           <br></br>
-          <SidebarLink to="/InUploadrec">Upload Record</SidebarLink>
+          {/*<SidebarLink to="/InUploadrec">Upload Record</SidebarLink>*/}
         </SidebarMenu>
       </SidebarWrapper>
     </>

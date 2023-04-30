@@ -23,8 +23,8 @@ const Pgrant = ({state}) => {
 
   const grantAccess = async(event)=>{
     event.preventDefault();
-    console.log(state); 
-    const { provider, signer, contract } = state;
+    console.log(state.state); 
+    const { provider, signer, contract } = state.state;
     console.log(contract);
     const address = document.querySelector("#address").value;
 
@@ -66,14 +66,14 @@ const Pgrant = ({state}) => {
               {showError && (
                 <FormError style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
                   <span>{error}</span>
-                  <FormButton style={{height:'25px', width:'30px',  display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'   }} type="button" onClick={handleOkClick}>
+                  <FormButton style={{ height:'25px', width:'30px',  display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop:'15px'  }} type="button" onClick={handleOkClick}>
                     OK
                   </FormButton>
                 </FormError>
               )}
 
               {accessGranted && (
-                <FormSuccess style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                <FormSuccess style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'  }}>
                   <span>Access Granted!</span>
                   <FormButton style={{height:'25px', width:'30px',  display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'   }} type="button" onClick={() => setAccessGranted(false)}>
                     OK

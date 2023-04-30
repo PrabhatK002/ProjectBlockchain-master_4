@@ -6,6 +6,7 @@ import Ddashboard from '../components/Ddashboard/Ddashboard';
 import Pdashboard from '../components/Pdashboard/Pdashboard';
 
 const PatDashboard = ({state}) => {
+  console.log(state, 'patdas');
   return (
     <>
       <Pdashboard state={state}/>    

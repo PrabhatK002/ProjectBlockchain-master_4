@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import ResDashboard from "../components/ResDashboard/ResDashboard";
 import Resupload from "../components/ResDashboard/Resupload";
-const ResUploadpage = () => {
+
+const ResUploadpage = ({state}) => {
   return (
     <>
       <ResDashboard />
-      <Resupload />
+      <Resupload state={state}/>
     </>
   );
 };

@@ -12,6 +12,8 @@ import { Link as LinkS } from 'react-scroll';
 import {FaTimes} from 'react-icons/fa'
 import Labsidebar from './Labsidebar';
 
+import { useHistory, useNavigate } from 'react-router-dom';
+
 
 
 const LabDashboard = ({state, toggle}) => {
@@ -19,6 +21,7 @@ const LabDashboard = ({state, toggle}) => {
   const toggleHome = () => {
      scroll.scrollToTop()
   }
+  const navigate = useNavigate();
 
 
  const labLogout = async(event)=>{
@@ -27,6 +30,7 @@ const LabDashboard = ({state, toggle}) => {
    console.log(contract);
    console.log(provider);
    const transaction = await contract.logOut();
+   navigate("/");
 
  }
 

@@ -3,6 +3,7 @@ import React from "react";
 //import LoginForm from '../components/LoginForm/Login';
 //import SignIn from '../components/Signin/index.js'
 import PharmaLogin from "../components/ToLogin/toLoginPharma";
+
 const PharmaPage = ({state}) => {
   return (
     <>

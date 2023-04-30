@@ -17,7 +17,7 @@ const Ressidebar = () => {
           <br></br>
           <SidebarLink to="/ResaccessRec">Access Record</SidebarLink>
           <br></br>
-          <SidebarLink to="/ResUploadrec">Upload Record</SidebarLink>
+         {/* <SidebarLink to="/ResUploadrec">Upload Record</SidebarLink>*/}
         </SidebarMenu>
       </SidebarWrapper>
     </>

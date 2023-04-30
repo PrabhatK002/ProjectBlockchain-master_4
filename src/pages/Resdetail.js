@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import ResDashboard from "./ResDashboard";
 import ResDetail from "../components/ResDashboard/ResDetail";
-const Resdetail = () => {
+
+const Resdetail = ({state}) => {
   return (
     <>
       <ResDashboard />
-      <ResDetail />
+      <ResDetail state={state}/>
     </>
   );
 };

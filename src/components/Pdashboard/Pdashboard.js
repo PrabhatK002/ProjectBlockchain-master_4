@@ -6,21 +6,25 @@ import { SidebarContainer, Icon, CloseIcon,  SidebarMenu, SidebarLink, SidebarRo
 import { animateScroll as scroll} from 'react-scroll';
 import Psidebar from './Psidebar';
 
+import { useHistory, useNavigate } from 'react-router-dom';
+
 
 
 const Pdashboard = ({toggle, state}) => {
-
+  
   const toggleHome = () => {
      scroll.scrollToTop()
   }
+  const navigate = useNavigate();
 
   const patientLogout = async(event)=>{
     event.preventDefault();
-    console.log(state);
+    console.log(state, 'pdas');
     const { provider, signer, contract } = state;
     console.log(contract);
     console.log(provider);
     const transaction = await contract.logOut();
+    navigate("/");
 
   }
 

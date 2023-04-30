@@ -28,11 +28,14 @@ import { Link as LinkS } from "react-scroll";
 import { FaTimes } from "react-icons/fa";
 import Insidebar from "./Insidebar";
 
+import { useHistory, useNavigate } from 'react-router-dom';
+
 const InDashboard = ({state, toggle}) => {
   console.log(state);
   const toggleHome = () => {
      scroll.scrollToTop()
   }
+  const navigate = useNavigate();
 
 
  const insuranceLogout = async(event)=>{
@@ -41,6 +44,7 @@ const InDashboard = ({state, toggle}) => {
    console.log(contract);
    console.log(provider);
    const transaction = await contract.logOut();
+   navigate("/");
 
  }
 

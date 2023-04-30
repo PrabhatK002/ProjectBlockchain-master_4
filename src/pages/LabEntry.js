@@ -1,6 +1,7 @@
 import React from "react";
 
 import LabLogin from "../components/ToLogin/toLoginLab";
+
 const LabPage = ({state}) => {
   return (
     <>

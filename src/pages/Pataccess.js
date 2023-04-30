@@ -5,11 +5,12 @@ import LoginForm from '../components/LoginForm/Login';
 import Pdashboard from '../components/Pdashboard/Pdashboard';
 import Ddetail from "../components/Ddashboard/Ddetail";
 import Paccess from "../components/Pdashboard/Paccess";
-const Pataccess = () => {
+
+const Pataccess = ({state}) => {
   return (
     <>
       <Pdashboard/>  
-      <Paccess />
+      <Paccess state={state}/>
     </>
   );
 };

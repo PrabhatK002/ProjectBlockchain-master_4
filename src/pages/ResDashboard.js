@@ -5,10 +5,10 @@ import LoginForm from "../components/LoginForm/Login";
 //import LabDashboard from '../components/LabDashboard/LabDashboard';
 import ResDashboard from "../components/ResDashboard/ResDashboard";
 
-const ResDashboardpage = () => {
+const ResDashboardpage = ({state}) => {
   return (
     <>
-      <ResDashboard />
+      <ResDashboard state={state}/>
     </>
   );
 };

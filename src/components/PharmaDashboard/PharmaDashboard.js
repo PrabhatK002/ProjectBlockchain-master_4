@@ -13,6 +13,8 @@ import {FaTimes} from 'react-icons/fa'
 import Dsidebar from '../Ddashboard/Dsidebar'
 import Pharmasidebar from './Pharmasidebar';
 
+import { useHistory, useNavigate } from 'react-router-dom';
+
 
 
 const Pharmadashboard = ({state, toggle}) => {
@@ -21,6 +23,8 @@ const Pharmadashboard = ({state, toggle}) => {
      scroll.scrollToTop()
   }
 
+  const navigate = useNavigate();
+
 
  const pharmacyLogout = async(event)=>{
    event.preventDefault();
@@ -28,6 +32,7 @@ const Pharmadashboard = ({state, toggle}) => {
    console.log(contract);
    console.log(provider);
    const transaction = await contract.logOut();
+   navigate("/");
 
  }
 
