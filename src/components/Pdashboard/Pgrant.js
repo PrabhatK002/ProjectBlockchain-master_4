@@ -24,7 +24,7 @@ const Pgrant = ({state}) => {
   const grantAccess = async(event)=>{
     event.preventDefault();
     console.log(state); 
-    const { provider, signer, contract } = state;
+    const { contract } = state;
     console.log(contract);
     const address = document.querySelector("#address").value;
 
@@ -41,7 +41,7 @@ const Pgrant = ({state}) => {
       setAccessGranted(true); // set accessGranted to true
       //window.location.href = "/PatEntry";
     } catch (error) {
-      setError("Already Authorised or an error occured.");
+      setError("Already Authorised or an error occurred.");
       setShowError(true);
     }
   }

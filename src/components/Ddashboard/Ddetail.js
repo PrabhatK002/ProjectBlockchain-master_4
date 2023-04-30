@@ -31,8 +31,9 @@ const Ddetail = ({ state }) => {
   const loadDoctorData = async () => {
     try {
       setLoading(true);
-      const { contract }= state;
-      const result = await contract.methods. getDoctorDetails().call();
+      const { provider, signer, contract } = state;
+      console.log(contract);
+      const result = await contract.getDoctorDetails();
       setDoctorData({
         name: result[0],
         licenseno: result[1],

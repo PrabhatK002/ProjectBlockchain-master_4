@@ -7,7 +7,7 @@ import Ddetail from "../components/Ddashboard/Ddetail";
 import Daccess from "../components/Ddashboard/Daccess";
 import Dupload from "../components/Ddashboard/Dupload";
 
-const DocUpload = (state) => {
+const DocUpload = ({state}) => {
   return (
     <>
       <Ddashboard/>  

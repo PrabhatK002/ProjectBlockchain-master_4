@@ -14,14 +14,15 @@ import { Text } from "./DdashboardElements";
 import Footer from "../Footer";
 import { FormError } from "./DdashboardElements";
 
-const Dupload = (state) => {
+const Dupload = ({state}) => {
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
   
 
   const docUpload = async(event)=>{
     event.preventDefault();
-    const { contract } = state;
+    const { provider, signer, contract } = state;
+    console.log(contract);
     const _uName = document.querySelector("#docName").value;
     const _reason = document.querySelector("#reason").value;
     const _visitedDate = document.querySelector("#date").value;

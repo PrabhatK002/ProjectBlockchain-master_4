@@ -4,7 +4,7 @@ import LoginForm from '../components/LoginForm/Login';
 import DocForm from '../components/LoginForm/loginDoc';
 //import SignIn from '../components/Signin/index.js'
 
-const SignupdocPage = (state) => {
+const SignupdocPage = ({state}) => {
   return (
     <>
       <h1>cdcfs</h1>

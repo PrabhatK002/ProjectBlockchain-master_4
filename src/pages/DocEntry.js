@@ -4,7 +4,7 @@ import React from "react";
 //import SignIn from '../components/Signin/index.js'
 //import PatLogin from "../components/ToLogin/toLoginPat";
 import DocLogin from "../components/ToLogin/toLoginDoc";
-const DocPage = (state) => {
+const DocPage = ({state}) => {
   return (
     <>
       <h1>cdcfs</h1>

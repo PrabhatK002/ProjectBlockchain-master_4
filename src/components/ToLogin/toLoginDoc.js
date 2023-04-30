@@ -15,7 +15,7 @@ import Footer from "../Footer";
 import { useState, useEffect } from 'react';
 
 
-const DocLogin = (state) => {
+const DocLogin = ({state}) => {
 
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
@@ -23,7 +23,8 @@ const DocLogin = (state) => {
 
   const doctorLogin = async(event)=>{
     event.preventDefault();
-    const { contract } = state;
+    const { provider, signer, contract } = state;
+    console.log(contract);
     const name = document.querySelector("#name").value;
     const license = document.querySelector("#license").value;
 

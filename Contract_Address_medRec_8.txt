@@ -30,13 +30,28 @@ PRIVATE KEY
 Patient 1:
 Shyam Pandey
 9856485248
-Male 
+Male
 1995/2/6
 Shyam_1234
 
 
 
 
+
+
+FOR DOCTORS:
+
+ACCOUNT ADDRESS(1)
+0xbE8acDC2E1f772a13127361C7A85bF6Ff5E99c01
+PRIVATE KEY
+0x8d96f253c1947c6d5dae6cccd6c2fb9026f6fcb50e0cbbb14d599196e98bd659
+
+Doctor 1:
+Hari Yadav
+1457895
+Green City
+General Practitioner 
+9842659874
 
 
 

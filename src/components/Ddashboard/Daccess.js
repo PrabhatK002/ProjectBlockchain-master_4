@@ -14,7 +14,7 @@ import { Text } from './DdashboardElements';
 import Footer from '../Footer';
 import { useHistory, useNavigate } from 'react-router-dom';
 
-const Daccess = (state) => {
+const Daccess = ({state}) => {
   const [address, setAddress] = useState("");
   const navigate = useNavigate();
 
@@ -22,12 +22,12 @@ const Daccess = (state) => {
   const checkAccess = async (event) => {
     event.preventDefault();
 
-    const { contract } = state;
+    const { provider, signer, contract } = state;
+    console.log(contract);
     const _addr = document.querySelector("#address").value;
-    const transaction = await contract.methods.getPatientRecords(_addr).call();
 
     try {
-      const records = await contract.methods.getPatientRecords(_addr).call();
+      const records = await contract.getPatientRecords(_addr);
       navigate.push({
         pathname: '/RecordsForDoc',
         state: { records }
@@ -58,8 +58,8 @@ const Daccess = (state) => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Daccess />);
+/*const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Daccess />);*/
 
 export default Daccess;
 

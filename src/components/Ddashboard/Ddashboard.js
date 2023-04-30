@@ -23,7 +23,8 @@ const Ddashboard = ({state, toggle}) => {
 
  const doctorLogout = async(event)=>{
    event.preventDefault();
-   const { contract } = state;
+   const { provider, signer, contract } = state;
+   console.log(contract);
    const transaction = await contract.logOut();
 
  }

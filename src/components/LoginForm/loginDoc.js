@@ -19,14 +19,15 @@ import { Web3Provider } from "@ethersproject/providers";
 
 import { useState, useEffect } from 'react';
 
-const DocForm = (state) => {
+const DocForm = ({state}) => {
 
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
 
   const doctorRegister = async(event)=>{
     event.preventDefault();
-    const { contract } = state;
+    const { provider, signer, contract } = state;
+    console.log(contract);
     const _name = document.querySelector("#name").value;
     const license = document.querySelector("#license").value;
     const _hname = document.querySelector("#hospital").value;
