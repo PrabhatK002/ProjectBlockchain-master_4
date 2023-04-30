@@ -15,7 +15,7 @@ import { FormSuccess } from "./PdashboardElements";
 import Footer from "../Footer";
 
 
-const Prevoke = (state) => {
+const Prevoke = ({state}) => {
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
   const [accessRevoked, setAccessRevoked] = useState(false);
@@ -24,7 +24,8 @@ const Prevoke = (state) => {
 
   const revokeAccess = async(event)=>{
     event.preventDefault();
-    const { contract } = state;
+    const { provider, signer, contract } = state;
+    console.log(contract);
     const address = document.querySelector("#address").value;
 
     console.log(address);
@@ -40,7 +41,7 @@ const Prevoke = (state) => {
       setAccessRevoked(true); // set accessRevoked to true
       //window.location.href = "/PatEntry";
     } catch (error) {
-      setError("Already unauthorised or an error occured.");
+      setError("Already unauthorised or an error occurred.");
       setShowError(true);
     }
   }

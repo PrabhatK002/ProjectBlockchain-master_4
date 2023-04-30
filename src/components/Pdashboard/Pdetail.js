@@ -16,7 +16,7 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { Spinner } from 'react-bootstrap'; 
 
-const Pdetail = ({ state }) => {
+const Pdetail = ({state}) => {
   const [patientData, setPatientData] = useState({
     name: "",
     phone: "",
@@ -28,10 +28,13 @@ const Pdetail = ({ state }) => {
   const [error, setError] = useState("");
 
   const loadPatientData = async () => {
+    const { provider, signer, contract } = state;
+    console.log(contract);
+    console.log('Account Address:', state.account);
+    
     try {
       setLoading(true);
-      const { contract } = state;
-      const result = await contract.methods.getPatientDetails().call();
+      const result = await contract.getPatientDetails();
       setPatientData({
         name: result[0],
         phone: result[1],
@@ -57,16 +60,16 @@ const Pdetail = ({ state }) => {
           <FormContent>
             <Form >
               <FormH1>Look up into Patient's detail</FormH1>
-              <FormLabel htmlFor='for'>Account address :</FormLabel>
-              <FormInput type='text' id='address' value={state.account} disabled />
+              <FormLabel htmlFor='for'>Account address :</FormLabel> 
+              <FormInput type='text' id='address' value={state.account} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
               <FormLabel htmlFor='to'>Name :</FormLabel>
-              <FormInput type='text' id='name' value={patientData.name} disabled />
+              <FormInput type='text' id='name' value={patientData.name} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
               <FormLabel htmlFor='to'>Phone Number :</FormLabel>
-              <FormInput type='text' id='phone' value={patientData.phone} disabled />
+              <FormInput type='text' id='phone' value={patientData.phone} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
               <FormLabel htmlFor='to'>Gender :</FormLabel>
-              <FormInput type='text' id='gender' value={patientData.gender} disabled />
+              <FormInput type='text' id='gender' value={patientData.gender} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
               <FormLabel htmlFor='to'>DOB :</FormLabel>
-              <FormInput type='text' id='dob' value={patientData.dob} disabled />
+              <FormInput type='text' id='dob' value={patientData.dob} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
               {loading && <p>Loading...</p>}
               {error && <p>{error}</p>}
             </Form>

@@ -6,7 +6,7 @@ import Ddashboard from '../components/Ddashboard/Ddashboard';
 import Pdashboard from '../components/Pdashboard/Pdashboard';
 import Pdetail from "../components/Pdashboard/Pdetail";
 
-const PatDetail = (state) => {
+const PatDetail = ({state}) => {
   return (
     <>
       <Pdashboard/>   

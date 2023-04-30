@@ -19,7 +19,7 @@ import { Web3Provider } from "@ethersproject/providers";
 import { useState } from "react";
 
 
-const PatLogin = (state) => {
+const PatLogin = ({state}) => {
 
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
@@ -27,7 +27,8 @@ const PatLogin = (state) => {
 
   const patientLogin = async(event)=>{
     event.preventDefault();
-    const { contract } = state;
+    const { provider, signer, contract } = state;
+    console.log(contract);
     const name = document.querySelector("#name").value;
     const password = document.querySelector("#password").value;
 
@@ -41,7 +42,7 @@ const PatLogin = (state) => {
       document.getElementById("login-form").reset();
       setError("");
       setShowError(false);
-      window.location.href = "/Pdashboard";
+      window.location.href = "/PatDashboard";
     } catch (error) {
       setError("Name, Password and Address don't match.");
       setShowError(true);

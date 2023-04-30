@@ -15,7 +15,7 @@ import { FormSuccess } from "./PdashboardElements";
 import Footer from "../Footer";
 
 
-const Pgrant = (state) => {
+const Pgrant = ({state}) => {
 
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
@@ -23,7 +23,8 @@ const Pgrant = (state) => {
 
   const grantAccess = async(event)=>{
     event.preventDefault();
-    const { contract } = state;
+    const { provider, signer, contract } = state;
+    console.log(contract);
     const address = document.querySelector("#address").value;
 
     console.log(address);

@@ -6,7 +6,7 @@ import Ddashboard from '../components/Ddashboard/Ddashboard';
 import Pdashboard from '../components/Pdashboard/Pdashboard';
 import RecordsByPat from "../components/Pdashboard/RecordsByPat";
 
-const RecordsForPatPage = (state) => {
+const RecordsForPatPage = ({state}) => {
   return (
     <>
       <Pdashboard/>   

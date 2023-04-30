@@ -219,8 +219,8 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  padding: 16px 16px;
-  margin-bottom: 32px;
+  padding: 12px 16px;
+  margin-bottom: 24px;
   border: none;
   border-radius: 4px;
 `;

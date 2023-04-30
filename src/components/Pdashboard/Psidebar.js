@@ -6,19 +6,20 @@ import {
   SidebarWrapper,
   SidebarLink,
   SideBtnWrap,
-  SidebarRoute,
-} from "../Pdashboard/PdashboardElements";
+  SidebarRoute
+} from "./PdashboardElements";
+
 const Psidebar = () => {
   return (
     <>
       <SidebarWrapper>
         <SidebarMenu>
           <SidebarLink to="/Patdetail">Patient's Details</SidebarLink>
-          <br></br>
+          
           <SidebarLink to="/RecordsForPat">Access Record</SidebarLink>
-          <br></br>
+          
           <SidebarLink to="/Grant">Grant access</SidebarLink>
-          <br></br>
+        
           <SidebarLink to="/Revoke">Revoke Access</SidebarLink>
         </SidebarMenu>
       </SidebarWrapper>

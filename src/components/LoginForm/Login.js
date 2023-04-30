@@ -17,7 +17,7 @@ import Footer from "../Footer";
 import { ethers } from "ethers";
 import { Web3Provider } from "@ethersproject/providers";
 
-const LoginForm = ({ state }) => {
+const LoginForm = ({state}) => {
 
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
@@ -25,7 +25,7 @@ const LoginForm = ({ state }) => {
 
   const patientRegister = async(event)=>{
     event.preventDefault();
-    const { contract } = state;
+    const { provider, signer, contract } = state;
     console.log(contract);
     const _name = document.querySelector("#name").value;
     const _phone = document.querySelector("#phone").value;

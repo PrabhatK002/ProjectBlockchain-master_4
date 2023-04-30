@@ -19,13 +19,14 @@ import { useState, useEffect } from 'react';
 import PatientCard from './PatientCard'; // import the PatientCard component
 import { Spinner } from 'react-bootstrap'; // import the Spinner component from react-bootstrap
 
-const RecordsByPat = (state) => {
+const RecordsByPat = ({state}) => {
   const [patientRecords, setPatientRecords] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchPatientRecords = async () => {
-      const { contract } = state;
+      const { provider, signer, contract } = state;
+      console.log(contract);
       const records = await contract.methods.getPatientRecordsbyP().call();
       const unames = records[0];
       const reasons = records[1];
