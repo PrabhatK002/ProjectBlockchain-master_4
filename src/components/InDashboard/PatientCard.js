@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardContainer, CardTitle, CardSubtitle, CardText, CardLink, CardButton } from './IndashboardElements';
+import { CardContainer, CardTitle, CardSubtitle, CardText, CardLink, CardButton } from './IndashboardElement';
 import { Card } from 'react-bootstrap';
 
 const PatientCard = ({ uploader, reason, visitedDate, summary }) => {

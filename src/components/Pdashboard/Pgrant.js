@@ -24,7 +24,7 @@ const Pgrant = ({state}) => {
   const grantAccess = async(event)=>{
     event.preventDefault();
     console.log(state); 
-    const { contract } = state;
+    const { provider, signer, contract } = state;
     console.log(contract);
     const address = document.querySelector("#address").value;
 

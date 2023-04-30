@@ -48,7 +48,7 @@ const PharmaDetail = ({ state }) => {
     } catch (error) {
       console.error(error);
       setLoading(false);
-      setError("Error fetching doctor data. Please try again later.");
+      setError("Error fetching pharmacy data. Please try again later.");
     }
   };
 

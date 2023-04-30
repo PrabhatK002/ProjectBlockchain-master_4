@@ -23,7 +23,45 @@ import { FormInput } from './IndashboardElement';
 
 import { useState, useEffect } from 'react';
 
-const InDetail = () => {
+const InDetail = ({ state }) => {
+  const [insuranceData, setInsuranceData] = useState({
+    name: "",
+    contact: "",
+    location: "",
+    address: "",
+    licenseno: ""
+  
+    
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const loadInsuranceData = async () => {
+    try {
+      setLoading(true);
+      const { provider, signer, contract } = state;
+      console.log(contract);
+      const result = await contract.getInsuranceDetails();
+      setInsuranceData({
+        
+        name: result[1],
+        contact: result[2],
+        location: result[3],
+        address: result[4], 
+        licenseno: result[5]   
+      });
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+      setError("Error fetching insurance data. Please try again later.");
+    }
+  };
+
+  useEffect(() => {
+    loadInsuranceData();
+  }, []);
   return (
     <>
       <Container>
@@ -31,10 +69,17 @@ const InDetail = () => {
           <FormContent>
             <Form action="#">
               <FormH1>Look up into Insurance detail</FormH1>
-              <FormLabel htmlFor="for">Account address :</FormLabel>
-              <FormLabel htmlFor="to">Name :</FormLabel>
-              <FormLabel htmlFor="to">Contact :</FormLabel>
-            </Form>
+              <FormLabel htmlFor='for'>Account address :</FormLabel>
+                    <FormInput type='text' id='address' value={insuranceData.address} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>                    
+                    <FormLabel htmlFor='to'>Name :</FormLabel>
+                    <FormInput type='text' id='name' value={insuranceData.name} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                    <FormLabel htmlFor='to'>Liscence Number :</FormLabel>
+                    <FormInput type='text' id='license' value={insuranceData.licenseno} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                    <FormLabel htmlFor='to'>Contact :</FormLabel>
+                    <FormInput type='text' id='contact' value={insuranceData.contact} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                                  
+                      
+                </Form>
           </FormContent>
         </FormWrap>
       </Container>

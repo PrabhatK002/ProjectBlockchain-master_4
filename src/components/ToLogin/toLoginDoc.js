@@ -25,6 +25,8 @@ const DocLogin = ({state}) => {
     event.preventDefault();
     const { provider, signer, contract } = state;
     console.log(contract);
+    const from = await signer.getAddress();
+    console.log(from);
     const name = document.querySelector("#name").value;
     const license = document.querySelector("#license").value;
 
@@ -58,7 +60,7 @@ const DocLogin = ({state}) => {
           <Icon to="/">MRS</Icon>
           <FormContent>
             <Form onSubmit={doctorLogin} id="login-form" action="/DocDashboard">
-              <FormH1>Log in as new Doctor</FormH1>
+              <FormH1>Log in as Doctor</FormH1>
               <FormLabel htmlFor="for">Name</FormLabel>
               <FormInput id="name" type={String} required />
               <FormLabel htmlFor="to">Liscence no:</FormLabel>

@@ -29,7 +29,7 @@ const ResLogin = () => {
               <FormInput type={String} required />
 
               <FormButton type="submit" to="/ResDashboard">
-                Register
+                Log In
               </FormButton>
               {/* <Text>Forgot Password</Text>
                       <Text>Sign Up</Text> */}

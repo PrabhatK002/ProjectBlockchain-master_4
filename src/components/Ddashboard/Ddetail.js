@@ -33,6 +33,8 @@ const Ddetail = ({ state }) => {
       setLoading(true);
       const { provider, signer, contract } = state;
       console.log(contract);
+      const from = await signer.getAddress();
+      console.log(from);
       const result = await contract.getDoctorDetails();
       setDoctorData({
         name: result[1],

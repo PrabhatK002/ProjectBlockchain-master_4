@@ -48,7 +48,7 @@ const LabDetail = ({ state }) => {
     } catch (error) {
       console.error(error);
       setLoading(false);
-      setError("Error fetching doctor data. Please try again later.");
+      setError("Error fetching laboratory data. Please try again later.");
     }
   };
 
