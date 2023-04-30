@@ -23,6 +23,7 @@ const Pgrant = ({state}) => {
 
   const grantAccess = async(event)=>{
     event.preventDefault();
+    console.log(state); 
     const { provider, signer, contract } = state;
     console.log(contract);
     const address = document.querySelector("#address").value;
@@ -93,7 +94,7 @@ const Pgrant = ({state}) => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Pgrant />);
+/*const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Pgrant />);*/
 
 export default Pgrant;

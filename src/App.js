@@ -77,16 +77,7 @@ function App() {
     contract: null,
   });
 
-  /*const contractAddress = "0x44F6981293FB89088c8be5E087a3eC8d4c0DFaf6";
-  const contractABI = ContractAbi;
-  const provider = new ethers.providers.JsonRpcProvider("http://localhost:7545");
-  const signer = provider.getSigner();
-  const contract = new ethers.Contract(
-    contractAddress,
-    contractABI,
-    signer
-  );
-  const signerContract = contract.connect(signer);*/
+  
   
   const [account, setAccount] = useState("None");
   useEffect(() => {

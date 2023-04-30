@@ -16,6 +16,7 @@ const Pdashboard = ({toggle, state}) => {
 
   const patientLogout = async(event)=>{
     event.preventDefault();
+    console.log(state);
     const { provider, signer, contract } = state;
     console.log(contract);
     console.log(provider);
