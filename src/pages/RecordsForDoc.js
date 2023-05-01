@@ -16,4 +16,4 @@ const RecordsForDocPage = (state) => {
   );
 };
 
-export default RecordsByDoc;
+export default RecordsForDocPage;

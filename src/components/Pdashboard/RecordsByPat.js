@@ -52,22 +52,33 @@ const RecordsByPat = ({ state }) => {
   console.log(patientRecords);
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
       {isLoading ? (
         <Spinner animation="border" variant="primary" />
       ) : patientRecords.length === 0 ? (
-        <p style={{ fontSize: "2rem", textAlign: "center" }}>No records found.</p>
+        <p style={{ fontSize: "2rem", textAlign: "center" }}>
+          No records found.
+        </p>
       ) : (
         <>
-          {patientRecords.map((record, index) => (
-            <PatientCard
-              key={index}
-              uploader={record.uploader}
-              reason={record.reason}
-              visitedDate={record.visitedDate}
-              summary={record.summary}
-            />
-          ))}
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            {patientRecords.map((record, index) => (
+              <PatientCard
+                key={index}
+                uploader={record.uploader}
+                reason={record.reason}
+                visitedDate={record.visitedDate}
+                summary={record.summary}
+              />
+            ))}
+          </div>
         </>
       )}
     </div>

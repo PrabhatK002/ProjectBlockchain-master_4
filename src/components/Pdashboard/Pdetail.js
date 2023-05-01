@@ -61,15 +61,15 @@ const Pdetail = ({state}) => {
             <Form >
               <FormH1>Look up into Patient's detail</FormH1>
               <FormLabel htmlFor='for'>Account address :</FormLabel> 
-              <FormInput type='text' id='address' value={state.account} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+              <FormInput type='text' id='address' value={state.account} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
               <FormLabel htmlFor='to'>Name :</FormLabel>
-              <FormInput type='text' id='name' value={patientData.name} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+              <FormInput type='text' id='name' value={patientData.name} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px'  }}/>
               <FormLabel htmlFor='to'>Phone Number :</FormLabel>
-              <FormInput type='text' id='phone' value={patientData.phone} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+              <FormInput type='text' id='phone' value={patientData.phone} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
               <FormLabel htmlFor='to'>Gender :</FormLabel>
-              <FormInput type='text' id='gender' value={patientData.gender} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+              <FormInput type='text' id='gender' value={patientData.gender} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
               <FormLabel htmlFor='to'>DOB :</FormLabel>
-              <FormInput type='text' id='dob' value={patientData.dob} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+              <FormInput type='text' id='dob' value={patientData.dob} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
               {loading && <p>Loading...</p>}
               {error && <p>{error}</p>}
             </Form>

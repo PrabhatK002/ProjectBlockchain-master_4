@@ -135,7 +135,10 @@ function App() {
         const { ethereum } = window;
   
         if (ethereum) {
-          await ethereum.request({ method: "eth_requestAccounts" });
+         await ethereum.request({ method: "eth_requestAccounts" }).then((accounts)=>{
+          ethereum.selectedAddress = accounts[0]
+         })
+    
   
           window.ethereum.on("chainChanged", () => {
             window.location.reload();
@@ -154,6 +157,7 @@ function App() {
               signer: updatedSigner,
               contract: updatedContract,
             });
+            
            const from = await updatedSigner.getAddress();
             setAccount(from);
             console.log("Account updated:", from);
@@ -161,7 +165,7 @@ function App() {
           });
   
           const provider = new ethers.providers.JsonRpcProvider("http://localhost:7545");
-          const signer = provider.getSigner();
+          const signer = provider.getSigner(ethereum.selectedAddress);
           const contract = new ethers.Contract(
             contractAddress,
             contractABI,

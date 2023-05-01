@@ -14,35 +14,38 @@ import { Text } from './DdashboardElements';
 import { FormError } from './DdashboardElements';
 import Footer from '../Footer';
 import { useHistory, useNavigate } from 'react-router-dom';
+import RecordsByDoc from './RecordsByDoc';
 
 const Daccess = ({state}) => {
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
-  const [address, setAddress] = useState("");
+  //const [address, setAddress] = useState("");
   const navigate = useNavigate();
 
-  const isValidEthereumAddress = (address) => {
+  {/*const isValidEthereumAddress = (address) => {
     return /^(0x)?[0-9a-fA-F]{40}$/.test(address);
-  };
+  };*/}
 
   const checkAccess = async (event) => {
     event.preventDefault();
     const { provider, signer, contract } = state;
 
-    if (!isValidEthereumAddress(address)) {
+    const _addr = document.querySelector("#address").value;
+
+   { /*if (!isValidEthereumAddress(address)) {
       setError("Please enter a valid Ethereum address.");
       setShowError(true);
       return;
-    }
+    }*/}
 
     try {
-      const records = await contract.getPatientRecords(address);
+      const records = await contract.getPatientRecords(_addr);
       navigate.push({
         pathname: "/RecordsForDoc",
-        state: { records },
+        state: { records }
       });
     } catch (error) {
-      setAddress("");
+      //setAddress("");
       setError("Error accessing patient records. Please try again.");
       setShowError(true);
     }

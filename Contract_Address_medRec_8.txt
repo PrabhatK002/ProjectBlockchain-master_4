@@ -47,6 +47,12 @@ General Practitioner
 
 
 
+
+
+
+
+
+
 FOR DOCTORS:
 
 ACCOUNT ADDRESS(1)
@@ -66,7 +72,26 @@ General Practitioner
 
 
 
+Ravi Yadav
+5698478
 
+9842578958
+
+
+
+
+ACCOUNT ADDRESS
+0x03d7989D4641a9798f34F754F3Ce9E7B41977FA4
+PRIVATE KEY
+0xacc364cd15ab942432425d609a3df92020fbf61cb7215779615eaff7d03fa6cc
+
+Patient
+
+Sita Chand
+9856312547
+Female
+1996/2/9
+Sita_1234
 
 
 
