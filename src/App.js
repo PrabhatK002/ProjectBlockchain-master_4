@@ -84,7 +84,8 @@ function App() {
   
   
   const [account, setAccount] = useState("None");
-  useEffect(() => {
+  
+  /*useEffect(() => {
     const connectWallet = async () => {
       const contractAddress = "0xC240a2BEF01B1F7Db5f487730384A0552F9562DF";
       const contractABI = ContractAbi;
@@ -114,6 +115,8 @@ function App() {
           );
           setAccount(account);
           setState({ provider, signer, contract });
+          const from = await signer.getAddress();
+          console.log(from);
         } else {
           alert("Please install metamask");
         }
@@ -122,7 +125,62 @@ function App() {
       }
     };
     connectWallet();
+  }, []);*/
+
+  useEffect(() => {
+    const connectWallet = async () => {
+      const contractAddress = "0xC240a2BEF01B1F7Db5f487730384A0552F9562DF";
+      const contractABI = ContractAbi;
+      try {
+        const { ethereum } = window;
+  
+        if (ethereum) {
+          await ethereum.request({ method: "eth_requestAccounts" });
+  
+          window.ethereum.on("chainChanged", () => {
+            window.location.reload();
+          });
+  
+          window.ethereum.on("accountsChanged", async (accounts) => {
+            const provider = new ethers.providers.JsonRpcProvider("http://localhost:7545");
+            const updatedSigner = provider.getSigner(accounts[0]);
+            const updatedContract = new ethers.Contract(
+              contractAddress,
+              contractABI,
+              updatedSigner
+            );
+            setState({
+              provider,
+              signer: updatedSigner,
+              contract: updatedContract,
+            });
+           const from = await updatedSigner.getAddress();
+            setAccount(from);
+            console.log("Account updated:", from);
+          });
+  
+          const provider = new ethers.providers.JsonRpcProvider("http://localhost:7545");
+          const signer = provider.getSigner();
+          const contract = new ethers.Contract(
+            contractAddress,
+            contractABI,
+            signer
+          );
+          const from = await signer.getAddress();
+          setAccount(from);
+          setState({ provider, signer, contract });
+          console.log(from, 'currentAccount');
+        } else {
+          alert("Please install Metamask");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    
+    connectWallet();
   }, []);
+ 
 
 
   return (

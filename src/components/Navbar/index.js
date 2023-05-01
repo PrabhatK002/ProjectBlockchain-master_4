@@ -250,7 +250,10 @@ const Navbar = ({ toggle }) => {
   const toggleHome = () => {
     scroll.scrollToTop();
   };
-
+ 
+  const connectbutton = () => {
+    
+  }
   /*const connectbutton = () => {
     //const provider = new ethers.providers.Web3Provider(window.ethereum);
     window.ethereum.request({ method: "eth_requestAccounts" }).then((res) => {
@@ -259,7 +262,7 @@ const Navbar = ({ toggle }) => {
     });
   };*/
 
-  const connectbutton = async () => {
+  /*const connectbutton = async () => {
     try {
       // Request access to the user's Ethereum accounts
       const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -284,7 +287,7 @@ const Navbar = ({ toggle }) => {
     } catch (error) {
       console.error(error);
     }
-  }
+  }*/
   if (width <= 612) {
     return (
       <Header>
