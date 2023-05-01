@@ -157,6 +157,7 @@ function App() {
            const from = await updatedSigner.getAddress();
             setAccount(from);
             console.log("Account updated:", from);
+            {/*localStorage.setItem("currentAccount", from); // Save the account to localStorage*/}
           });
   
           const provider = new ethers.providers.JsonRpcProvider("http://localhost:7545");
@@ -170,6 +171,12 @@ function App() {
           setAccount(from);
           setState({ provider, signer, contract });
           console.log(from, 'currentAccount');
+       {/*
+         // Check if there is a currentAccount in localStorage
+          const currentAccount = localStorage.getItem("currentAccount");
+        if (currentAccount) {
+          setAccount(currentAccount);
+        }*/}
         } else {
           alert("Please install Metamask");
         }
