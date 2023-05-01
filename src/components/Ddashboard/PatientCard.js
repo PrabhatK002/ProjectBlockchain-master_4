@@ -9,7 +9,7 @@ import {
 } from "./DdashboardElements";
 import { Card } from "react-bootstrap";
 
-const PatientCard = ({ uploader, reason, visitedDate, summary }) => {
+/*const PatientCard = ({ uploader, reason, visitedDate, summary }) => {
   return (
     <CardContainer>
       <CardTitle>{uploader}</CardTitle>
@@ -20,6 +20,11 @@ const PatientCard = ({ uploader, reason, visitedDate, summary }) => {
       <CardButton>Update</CardButton>
     </CardContainer>
   );
-};
+};*/
+
+const PatientCard = ({ record }) => {
+  const { uploader, reason, visitedDate, summary } = record;
+  // ...
+}
 
 export default PatientCard;

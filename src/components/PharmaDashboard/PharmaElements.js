@@ -268,7 +268,7 @@ export const FormSuccess = styled.div`
 
 
 
-
+/*
 export const CardContainer = styled.div`
   background-color: #ffffff;
   border: 1px solid #f0f0f0;
@@ -323,7 +323,68 @@ export const CardButton = styled.button`
   }
 `;
 
+*/
 
+export const CardContainer = styled.div`
+  /*background-color: #ffffff;*/
+  /*background-color: linear-gradient(-120deg, $primary 65%, $secondary);*/
+  background-color: #eff6fb;
+  border: 3px solid #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 300px; 
+  height: 250px; 
+  margin-right: 1rem; 
+  margin-left: 1rem;
+  overflow: auto; 
+`;
+
+export const CardTitle = styled.h3`
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+`;
+
+export const CardSubtitle = styled.h5`
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+`;
+
+export const CardText = styled.p`
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+`;
+
+export const CardLink = styled.a`
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const CardButton = styled.button`
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #0069d9;
+  }
+`;
 
 
 

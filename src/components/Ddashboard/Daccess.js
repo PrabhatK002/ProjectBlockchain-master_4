@@ -31,6 +31,7 @@ const Daccess = ({state}) => {
     const { provider, signer, contract } = state;
 
     const _addr = document.querySelector("#address").value;
+    console.log("Calling getPatientRecords function with address:", _addr);
 
    { /*if (!isValidEthereumAddress(address)) {
       setError("Please enter a valid Ethereum address.");
@@ -40,12 +41,17 @@ const Daccess = ({state}) => {
 
     try {
       const records = await contract.getPatientRecords(_addr);
-      navigate.push({
-        pathname: "/RecordsForDoc",
-        state: { records }
-      });
+      console.log("Received records:", records);
+      if(records){
+        navigate("/RecordsForDoc", { state: records });
+      }
+      /*if(records){
+        navigate("/RecordsForDoc",
+          {state:  records} ,
+        );}*/
     } catch (error) {
       //setAddress("");
+      console.error("Error accessing patient records:", error);
       setError("Error accessing patient records. Please try again.");
       setShowError(true);
     }

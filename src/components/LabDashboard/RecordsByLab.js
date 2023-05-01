@@ -35,6 +35,7 @@ const RecordsByLab = (props) => {
           <Spinner animation="border" variant="primary" />
         ) : (
           <>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
             {patientRecords.map((record, index) => (
               <PatientCard
                 key={index}
@@ -44,6 +45,7 @@ const RecordsByLab = (props) => {
                 summary={record.summary}
               />
             ))}
+          </div>
           </>
         )}
       </>

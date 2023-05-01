@@ -64,17 +64,17 @@ const Ddetail = ({ state }) => {
                 <Form action="#">
                     <FormH1>Look up into Doctor's detail</FormH1>
                     <FormLabel htmlFor='for'>Account address :</FormLabel>
-                    <FormInput type='text' id='address' value={state.account} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>                    
+                    <FormInput type='text' id='address' value={state.account} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>                    
                     <FormLabel htmlFor='to'>Name :</FormLabel>
-                    <FormInput type='text' id='name' value={doctorData.name} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                    <FormInput type='text' id='name' value={doctorData.name} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
                     <FormLabel htmlFor='to'>License Number :</FormLabel>
-                    <FormInput type='text' id='licenseno' value={doctorData.licenseno} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                    <FormInput type='text' id='licenseno' value={doctorData.licenseno} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
                     <FormLabel htmlFor='to'>Hospital Name :</FormLabel>
-                    <FormInput type='text' id='hname' value={doctorData.hname} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                    <FormInput type='text' id='hname' value={doctorData.hname} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
                     <FormLabel htmlFor='to'>Faculty :</FormLabel>
-                    <FormInput type='text' id='faculty' value={doctorData.faculty} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                    <FormInput type='text' id='faculty' value={doctorData.faculty} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
                     <FormLabel htmlFor='to'>Contact :</FormLabel>
-                    <FormInput type='text' id='contact' value={doctorData.contact} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                    <FormInput type='text' id='contact' value={doctorData.contact} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
 
                     {loading && <p>Loading...</p>}
                     {error && <p>{error}</p>}

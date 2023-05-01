@@ -7,7 +7,8 @@ import Ddetail from "../components/Ddashboard/Ddetail";
 import RecordsByDoc from "../components/Ddashboard/RecordsByDoc";
 
 
-const RecordsForDocPage = (state) => {
+const RecordsForDocPage = ({state}) => {
+  console.log(state, 'docr');
   return (
     <>
       <Ddashboard/>  

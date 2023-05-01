@@ -67,13 +67,13 @@ const ResDetail = ({ state }) => {
             <Form action="#">
               <FormH1>Look up into Insurance detail</FormH1>
               <FormLabel htmlFor='for'>Account address :</FormLabel>
-                    <FormInput type='text' id='address' value={researcherData.address} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>                    
+                    <FormInput type='text' id='address' value={researcherData.address} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>                    
                     <FormLabel htmlFor='to'>Name :</FormLabel>
-                    <FormInput type='text' id='name' value={researcherData.name} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                    <FormInput type='text' id='name' value={researcherData.name} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
                     <FormLabel htmlFor='to'>Contact :</FormLabel>
-                    <FormInput type='text' id='contact' value={researcherData.licenseno} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                    <FormInput type='text' id='contact' value={researcherData.licenseno} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
                     <FormLabel htmlFor='to'>Affiliation :</FormLabel>
-                    <FormInput type='text' id='affliation' value={researcherData.contact} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000' }}/>
+                    <FormInput type='text' id='affliation' value={researcherData.contact} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
                                   
             </Form>
           </FormContent>
