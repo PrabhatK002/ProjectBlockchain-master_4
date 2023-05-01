@@ -143,7 +143,7 @@ function App() {
   
           window.ethereum.on("accountsChanged", async (accounts) => {
             const provider = new ethers.providers.JsonRpcProvider("http://localhost:7545");
-            const updatedSigner = provider.getSigner(accounts[0]);
+            const updatedSigner = provider.getSigner(ethereum.selectedAddress);
             const updatedContract = new ethers.Contract(
               contractAddress,
               contractABI,
@@ -157,7 +157,7 @@ function App() {
            const from = await updatedSigner.getAddress();
             setAccount(from);
             console.log("Account updated:", from);
-            {/*localStorage.setItem("currentAccount", from); // Save the account to localStorage*/}
+            localStorage.setItem("currentAccount", from); // Save the account to localStorage
           });
   
           const provider = new ethers.providers.JsonRpcProvider("http://localhost:7545");

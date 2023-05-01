@@ -5,6 +5,7 @@ import React from "react";
 //import PatLogin from "../components/ToLogin/toLoginPat";
 import DocLogin from "../components/ToLogin/toLoginDoc";
 const DocPage = ({state}) => {
+  console.log(state, 'dl')
   return (
     <>
       <h1>cdcfs</h1>
