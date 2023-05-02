@@ -9,8 +9,8 @@ const PatientCard = ({ uploader, reason, visitedDate, summary }) => {
       <CardSubtitle>Reason: {reason}</CardSubtitle>
       <CardText>Visited on: {visitedDate}</CardText>
       <CardText>Summary: {summary}</CardText>
-      <CardLink href="#">View more</CardLink>
-      <CardButton>Update</CardButton>
+      {/*<CardLink href="#">View more</CardLink>
+      <CardButton>Update</CardButton>*/}
     </CardContainer>
   );
 };
