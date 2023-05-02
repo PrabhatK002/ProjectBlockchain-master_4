@@ -25,6 +25,7 @@ import { useState, useEffect } from 'react';
 
 const InDetail = ({ state }) => {
   const [insuranceData, setInsuranceData] = useState({
+    id:"",
     name: "",
     contact: "",
     location: "",
@@ -42,9 +43,10 @@ const InDetail = ({ state }) => {
       setLoading(true);
       const { provider, signer, contract } = state;
       console.log(contract);
-      const result = await contract.getInsuranceDetails();
+      const _addr = signer.getAddress();
+      const result = await contract.getInsuranceDetails(_addr);
       setInsuranceData({
-        
+        id: result[0],
         name: result[1],
         contact: result[2],
         location: result[3],

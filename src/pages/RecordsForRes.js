@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import ResDashboard from "../components/ResDashboard/ResDashboard";
 import RecordsByRes from "../components/ResDashboard/RecordsByRes";
 
-const RecordsForResPage = (state) => {
+const RecordsForResPage = ({state}) => {
     return (
       <>
         <ResDashboard/>  
@@ -12,4 +12,4 @@ const RecordsForResPage = (state) => {
     );
   };
   
-  export default RecordsByRes;
+  export default RecordsForResPage;

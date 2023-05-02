@@ -4,7 +4,7 @@ import InDashboard from "../components/InDashboard/InDashboard";
 import RecordsByIn from "../components/InDashboard/RecordsByIn";
 
 
-const RecordsForInPage = (state) => {
+const RecordsForInPage = ({state}) => {
     return (
       <>
         <InDashboard/>  
@@ -13,4 +13,4 @@ const RecordsForInPage = (state) => {
     );
   };
   
-  export default RecordsByIn;
+  export default RecordsForInPage;

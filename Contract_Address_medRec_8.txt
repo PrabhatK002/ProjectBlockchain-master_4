@@ -45,6 +45,11 @@ General Practitioner
 
 
 
+Ravi Yadav
+5698478
+
+9842578958
+
 
 ====================================================================
 
@@ -72,10 +77,7 @@ General Practitioner
 
 
 
-Ravi Yadav
-5698478
 
-9842578958
 
 
 
@@ -85,7 +87,7 @@ ACCOUNT ADDRESS(6)
 PRIVATE KEY
 0xacc364cd15ab942432425d609a3df92020fbf61cb7215779615eaff7d03fa6cc
 
-Patient
+Patient 1:
 
 Sita Chand
 9856312547
@@ -99,8 +101,31 @@ Sita_1234
 
 
 
+ACCOUNT ADDRESS(8)
+0x7Cc547aa3F020a9662b5B94550808761f40600ef
+PRIVATE KEY
+0x22a7b10b7abcb715954adc59a9f98b9cb3908d8286a399d24bbc4f70284922ee
+
+Insurance 1:
+
+Suraj Thapa
+2583647
+9854723654
+Thapathali
 
 
+
+
+
+
+
+
+Researcher 1:
+
+Niraj Bista
+Department of Biostatistics, TU
+9856421354
+2583647
 
 
 

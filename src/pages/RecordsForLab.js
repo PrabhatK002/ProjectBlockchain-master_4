@@ -4,7 +4,7 @@ import LabDashboard from "../components/LabDashboard/LabDashboard";
 import RecordsByLab from "../components/LabDashboard/RecordsByLab";
 
 
-const RecordsForLabPage = (state) => {
+const RecordsForLabPage = ({state}) => {
     return (
       <>
         <LabDashboard/>  
@@ -13,4 +13,4 @@ const RecordsForLabPage = (state) => {
     );
   };
   
-  export default RecordsByLab;
+  export default RecordsForLabPage;

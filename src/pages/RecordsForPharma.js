@@ -4,7 +4,7 @@ import PharmaAccess from "../components/PharmaDashboard/PharmaAccess";
 import PharmaDashboard from "../components/PharmaDashboard/PharmaDashboard";
 import RecordsByPharma from "../components/PharmaDashboard/RecordsByPharma"
 
-const RecordsForPharmaPage = (state) => {
+const RecordsForPharmaPage = ({state}) => {
     return (
       <>
         <PharmaDashboard/>  
@@ -13,4 +13,4 @@ const RecordsForPharmaPage = (state) => {
     );
   };
   
-  export default RecordsByPharma;
+  export default RecordsForPharmaPage;
