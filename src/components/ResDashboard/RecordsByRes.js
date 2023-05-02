@@ -30,26 +30,60 @@ import Ressidebar from "./Ressidebar";
 
 
 import { useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 
 
 import PatientCard from './PatientCard'; // import the PatientCard component
 import { Spinner } from 'react-bootstrap'; // import the Spinner component from react-bootstrap
 
-const RecordsByRes = (props) => {
-    const [patientRecords, setPatientRecords] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-  
-    useEffect(() => {
-      const { records } = props.location.state;
-      setPatientRecords(records);
+const RecordsByRes = ({ state, props }) => {
+  //const location = useLocation();
+  console.log(state, "resrec");
+  const [patientRecords, setPatientRecords] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    const records = location.state;
+    console.log('records:', records);
+
+    const unames = records[0];
+      const reasons = records[1];
+      const visitedDates = records[2];
+      const summaries = records[3];
+
+      const recordsArray = [];
+      for (let i = 0; i < unames.length; i++) {
+        recordsArray.push({
+          uploader: unames[i],
+          reason: reasons[i],
+          visitedDate: visitedDates[i],
+          summary: summaries[i],
+        });
+      }
+
+      setPatientRecords(recordsArray);
+      //setPatientRecords(records);
+      console.log(patientRecords);
       setIsLoading(false);
-    }, [props.location.state]);
+    }, [location.state]);
   
     return (
-      <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
         {isLoading ? (
-          <Spinner animation="border" variant="primary" />
-        ) : (
+        <Spinner animation="border" variant="primary" />
+      ) : patientRecords.length === 0 ? (
+        <p style={{ fontSize: "2rem", textAlign: "center" }}>
+          No records found.
+        </p>
+      ) : (
           <>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {patientRecords.map((record, index) => (
@@ -60,12 +94,14 @@ const RecordsByRes = (props) => {
                 visitedDate={record.visitedDate}
                 summary={record.summary}
               />
+              //<PatientCard record={patientRecords} />
             ))}
           </div>
           </>
         )}
-      </>
+      </div>
     );
   };
+
   
   export default RecordsByRes;

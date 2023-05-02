@@ -19,31 +19,40 @@ import { useHistory, useNavigate } from 'react-router-dom';
 const Inaccess = ({state}) => {
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
-  const [address, setAddress] = useState("");
+  //const [address, setAddress] = useState("");
   const navigate = useNavigate();
 
-  const isValidEthereumAddress = (address) => {
+  {/*const isValidEthereumAddress = (address) => {
     return /^(0x)?[0-9a-fA-F]{40}$/.test(address);
-  };
+  };*/}
 
   const checkAccess = async (event) => {
     event.preventDefault();
     const { provider, signer, contract } = state;
 
-    if (!isValidEthereumAddress(address)) {
+    const _addr = document.querySelector("#address").value;
+    console.log("Calling getPatientRecords function with address:", _addr);
+
+   { /*if (!isValidEthereumAddress(address)) {
       setError("Please enter a valid Ethereum address.");
       setShowError(true);
       return;
-    }
+    }*/}
 
     try {
-      const records = await contract.getPatientRecords(address);
-      navigate.push({
-        pathname: "/RecordsForIn",
-        state: { records },
-      });
+      const records = await contract.getPatientRecords(_addr);
+      console.log("Received records:", records);
+      if(records){
+        navigate("/RecordsForIn", 
+        { state: records },);
+      }
+      /*if(records){
+        navigate("/RecordsForDoc",
+          {state:  records} ,
+        );}*/
     } catch (error) {
-      setAddress("");
+      //setAddress("");
+      console.error("Error accessing patient records:", error);
       setError("Error accessing patient records. Please try again.");
       setShowError(true);
     }
@@ -82,7 +91,6 @@ const Inaccess = ({state}) => {
     </>    
   );
 };
-
 /*const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Inaccess />);*/
 

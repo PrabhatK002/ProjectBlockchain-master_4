@@ -76,8 +76,12 @@ const RecordsByDoc = ({ state, props }) => {
         }}
       >
         {isLoading ? (
-          <Spinner animation="border" variant="primary" />
-        ) : (
+        <Spinner animation="border" variant="primary" />
+      ) : patientRecords.length === 0 ? (
+        <p style={{ fontSize: "2rem", textAlign: "center" }}>
+          No records found.
+        </p>
+      ) : (
           <>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {patientRecords.map((record, index) => (

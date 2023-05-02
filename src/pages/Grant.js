@@ -8,6 +8,7 @@ import Pdetail from "../components/Pdashboard/Pdetail";
 import Pgrant from "../components/Pdashboard/Pgrant";
 
 const Grant = ({state}) => {
+  console.log(state,'grant:');
   return (
     <>
       <Pdashboard/>   
