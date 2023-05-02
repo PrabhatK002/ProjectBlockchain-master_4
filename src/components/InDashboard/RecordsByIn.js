@@ -75,6 +75,8 @@ const RecordsByIn = ({ state, props }) => {
           justifyContent: "center",
           alignItems: "center",
           height: "100vh",
+          marginLeft: "200px",
+         flexWrap: "wrap"
         }}
       >
         {isLoading ? (
