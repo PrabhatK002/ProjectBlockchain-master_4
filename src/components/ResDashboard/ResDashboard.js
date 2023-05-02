@@ -39,7 +39,7 @@ const ResDashboard = ({state, toggle}) => {
   const navigate = useNavigate();
 
 
- const resLogout = async(event)=>{
+ {/*const resLogout = async(event)=>{
    event.preventDefault();
    const { provider, signer, contract } = state;
    console.log(contract);
@@ -47,7 +47,7 @@ const ResDashboard = ({state, toggle}) => {
    const transaction = await contract.logOut();
    navigate("/");
 
- }
+ */}
 
   return (
     <>
@@ -57,7 +57,7 @@ const ResDashboard = ({state, toggle}) => {
               MRS
             </NavLogo> 
             <NavBtn>
-                <NavBtnLink to="/" onClick={resLogout} >Log out</NavBtnLink>
+                <NavBtnLink to="/" /*onClick={resLogout} */>Log out</NavBtnLink>
             </NavBtn>         
         </NavbarContainer>
       </Nav> 

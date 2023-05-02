@@ -38,7 +38,7 @@ const InDashboard = ({state, toggle}) => {
   const navigate = useNavigate();
 
 
- const insuranceLogout = async(event)=>{
+ {/*const insuranceLogout = async(event)=>{
    event.preventDefault();
    const { provider, signer, contract } = state;
    console.log(contract);
@@ -47,7 +47,7 @@ const InDashboard = ({state, toggle}) => {
    navigate("/");
 
  }
-
+*/}
   return (
     <>
       <Nav>
@@ -56,7 +56,7 @@ const InDashboard = ({state, toggle}) => {
               MRS
             </NavLogo> 
             <NavBtn>
-                <NavBtnLink to="/" onClick={insuranceLogout} >Log out</NavBtnLink>
+                <NavBtnLink to="/" /*onClick={insuranceLogout}*/ >Log out</NavBtnLink>
             </NavBtn>         
         </NavbarContainer>
       </Nav> 
