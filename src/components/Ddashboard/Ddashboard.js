@@ -23,7 +23,7 @@ const Ddashboard = ({state, toggle}) => {
   const navigate = useNavigate();
 
 
- const doctorLogout = async(event)=>{
+ {/*const doctorLogout = async(event)=>{
    event.preventDefault();
 
    const { provider, signer, contract } = state;
@@ -32,7 +32,7 @@ const Ddashboard = ({state, toggle}) => {
    const transaction = await contract.logOut();
    navigate("/");
 
- }
+ }*/}
 
   return (
     <>
@@ -42,7 +42,7 @@ const Ddashboard = ({state, toggle}) => {
               MRS
             </NavLogo> 
             <NavBtn>
-                <NavBtnLink to="/" onClick={doctorLogout} >Log out</NavBtnLink>
+                <NavBtnLink to="/" /*</NavBtn>onClick={doctorLogout}*/ >Log out</NavBtnLink>
             </NavBtn>         
         </NavbarContainer>
       </Nav> 

@@ -17,7 +17,7 @@ const Pdashboard = ({toggle, state}) => {
   }
   const navigate = useNavigate();
 
-  const patientLogout = async(event)=>{
+  {/*const patientLogout = async(event)=>{
     event.preventDefault();
     console.log(state, 'pdas');
     const { provider, signer, contract } = state;
@@ -26,7 +26,7 @@ const Pdashboard = ({toggle, state}) => {
     const transaction = await contract.logOut();
     navigate("/");
 
-  }
+  }*/}
 
   return (
     <>
@@ -36,7 +36,7 @@ const Pdashboard = ({toggle, state}) => {
               MRS
             </NavLogo>  
             <NavBtn>
-                <NavBtnLink to="/" onClick={patientLogout}>Log out</NavBtnLink>
+                <NavBtnLink to="/" /*onClick={patientLogout}*/>Log out</NavBtnLink>
             </NavBtn>            
         </NavbarContainer>
       </Nav> 
