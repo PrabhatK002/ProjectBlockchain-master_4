@@ -22,7 +22,8 @@ const Ddetail = ({ state }) => {
     licenseno: "",
     hname: "",
     faculty: "",
-    contact: ""
+    contact: "",
+    addr: ""
   });
 
   const [loading, setLoading] = useState(false);
@@ -41,7 +42,8 @@ const Ddetail = ({ state }) => {
         licenseno: result[2],
         hname: result[3],
         faculty: result[4],
-        contact: result[5]
+        contact: result[5],
+        addr: result[6]
       });
       setLoading(false);
     } catch (error) {
@@ -64,7 +66,7 @@ const Ddetail = ({ state }) => {
                 <Form action="#">
                     <FormH1>Look up into Doctor's detail</FormH1>
                     <FormLabel htmlFor='for'>Account address :</FormLabel>
-                    <FormInput type='text' id='address' value={state.account} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>                    
+                    <FormInput type='text' id='address' value={doctorData.addr} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>                    
                     <FormLabel htmlFor='to'>Name :</FormLabel>
                     <FormInput type='text' id='name' value={doctorData.name} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
                     <FormLabel htmlFor='to'>License Number :</FormLabel>

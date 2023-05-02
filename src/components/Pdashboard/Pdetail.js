@@ -39,7 +39,8 @@ const Pdetail = ({state}) => {
         name: result[0],
         phone: result[1],
         gender: result[2],
-        dob: result[3]
+        dob: result[3],
+        
       });
       setLoading(false);
     } catch (error) {
@@ -61,7 +62,7 @@ const Pdetail = ({state}) => {
             <Form >
               <FormH1>Look up into Patient's detail</FormH1>
               <FormLabel htmlFor='for'>Account address :</FormLabel> 
-              <FormInput type='text' id='address' value={state.account} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
+              <FormInput type='text' id='address' value={state.address} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px' }}/>
               <FormLabel htmlFor='to'>Name :</FormLabel>
               <FormInput type='text' id='name' value={patientData.name} disabled style={{ fontWeight: 'bold', opacity: '0.9', border: '1px solid #ccc', color: '#000', fontSize:'15px'  }}/>
               <FormLabel htmlFor='to'>Phone Number :</FormLabel>
