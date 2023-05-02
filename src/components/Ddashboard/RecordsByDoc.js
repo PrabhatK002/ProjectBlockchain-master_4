@@ -42,8 +42,27 @@ const RecordsByDoc = ({ state, props }) => {
   const location = useLocation();
 
   useEffect(() => {
-    const { state: records } = location;
-      setPatientRecords(records);
+    const records = location.state;
+    console.log('records:', records);
+
+    const unames = records[0];
+      const reasons = records[1];
+      const visitedDates = records[2];
+      const summaries = records[3];
+
+      const recordsArray = [];
+      for (let i = 0; i < unames.length; i++) {
+        recordsArray.push({
+          uploader: unames[i],
+          reason: reasons[i],
+          visitedDate: visitedDates[i],
+          summary: summaries[i],
+        });
+      }
+
+      setPatientRecords(recordsArray);
+      //setPatientRecords(records);
+      console.log(patientRecords);
       setIsLoading(false);
     }, [location.state]);
   

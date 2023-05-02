@@ -7,7 +7,7 @@ import Pdashboard from '../components/Pdashboard/Pdashboard';
 import Pdetail from "../components/Pdashboard/Pdetail";
 import Pgrant from "../components/Pdashboard/Pgrant";
 
-const Grant = (state) => {
+const Grant = ({state}) => {
   return (
     <>
       <Pdashboard/>   

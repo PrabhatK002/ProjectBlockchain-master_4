@@ -1,6 +1,13 @@
-import React from 'react';
-import { CardContainer, CardTitle, CardSubtitle, CardText, CardLink, CardButton } from './LabdashboardElement';
-import { Card } from 'react-bootstrap';
+import React from "react";
+import {
+  CardContainer,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  CardLink,
+  CardButton,
+} from "./LabdashboardElement";
+import { Card } from "react-bootstrap";
 
 const PatientCard = ({ uploader, reason, visitedDate, summary }) => {
   return (

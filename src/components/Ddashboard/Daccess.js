@@ -43,7 +43,8 @@ const Daccess = ({state}) => {
       const records = await contract.getPatientRecords(_addr);
       console.log("Received records:", records);
       if(records){
-        navigate("/RecordsForDoc", { state: records });
+        navigate("/RecordsForDoc", 
+        { state: records },);
       }
       /*if(records){
         navigate("/RecordsForDoc",
